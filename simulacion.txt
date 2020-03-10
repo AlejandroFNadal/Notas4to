@@ -1,0 +1,103 @@
+Regularizar: aprobar 3 de los 4 parciales
+trabajo integrador grupal
+Aprobar: aprobar todos los parciales
+
+16/05 primer parcial teorico practico
+16/6 segundo parcial
+30/6 integrador
+
+Lunes miercoles y viernes a la tarde sala donde anda cleva
+
+It allows to analyze future scenarios, given certain parameters. The aim is to take decisions after taking
+into considerations the results of those simulations.
+
+Sistema: ...
+
+First step: Discover the system to be simulated.
+
+We do this because we cannot operate on the said system. Sometimes it does not exist. Sometimes it is not viable to use it as a whole.
+
+First we replicate the system as a model. It can be limited. We must remember that we are not working with a reality, but with a model.
+
+Types: (again this shit)
+
+-Statics: Those where time is not relevant. 
+
+-Dynamics: Time is important
+	   -Discrete Dynamics:
+	   -Contininous Dynamics:
+
+__________
+classifications
+
+deterministics:Given certain entries, there is a function that defines its output. It can be predicted. We need an analitical solution. 
+
+Stocastic Systems; it is a probability function. (the results)
+
+Elements of a simulation:
+
+-Entity: representation of input flows, to a system. This is responsable for the changes of the system's status.
+-System's state: is a photograph of whats happening in the system in a certain instant. It is made of the variables that characterize the system's status. Those variables can be accumulated.
+
+-Event:  it is a change in the actual system status. They can be current or future.
+
+time advancing, is it an event?
+
+-Locations: place where something happens inside the system.
+
+-Resources: devices, elements that are used for an operation to happen.
+
+-Attribute:it is a characteristic of an entity.
+
+-Variables: Values that are created and modified by math equations and logical relations.They can be continous or discrete.
+
+-Simulation clock: two kinds, absolute, time between 0 and end, or relative, the timelapse between two events.
+
+System: Set of objects or ideas that are interrelated, as a unit, to achieve a certain objective. It is a part of the universe that is the aim of the simulation
+
+A object X is a representation, a model, for a certain observer, who is in another position, if the observer can use X to answer stuff about Y, the real object representated by X
+
+Simulate is to design a model of a real system, and do stuff with it, to learn its behaviour or to evaluate certain strategies for its behaviour.
+
+fig 1
+
+Models:
+
+Physical models:
+or
+Graphical or symbolic.
+
+Manufacturing processes. Detects bottlenecks, to distribute personal, etc.
+
+Industrial plants: it gives information to stablish optimal operation conditions and elaborate procedures to do operations and emergencies.
+
+Public Systems: tries to predict the demand of energy during diferent times during the year, also to predict diseases.
+
+Transport Systems:
+
+given an analytical solution and a stocastic one, we have to choose the analytical one.
+
+I can play with time. That allows me to watch reality that will be in many many years. It allows to explore alternatives and possibilities.
+
+Cons: Sometimes it is very difficult to make a model.
+      Results can be misinterpreted.
+      It can be used when it is not necessary
+      Sometimes u cannot know how incorrect the results are.
+
+General (planteo) of the simulation:
+	It allows you to get close to the analysis and evaluation of the behaviour of systems before their counstruction. They are an important tool for design, allowing us to evaluate its impact before its construction.
+
+Stages of a simulation:
+
+-Problem formulation
+-System's definition
+-Model Formulation
+-Data collection
+-Model implementation in PC
+-Verification
+-Validation: it checks how exact the model is. 
+-Experiment design
+-Experimentation
+-Understanding of the results
+-Implementation
+-Documentation
