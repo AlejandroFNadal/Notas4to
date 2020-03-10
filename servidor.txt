@@ -1,0 +1,18 @@
+12 Factor applications.
+
+1) Codebase:  it must be in revision control, allows to make many deploys. There must be one repo per deployable unit.
+2) Dependencies: Declarate and isolate dependencies. Use a dependency? manager
+3) Config: Store config in the environment.
+   three things that affect sw:
+   	 binaries
+	 data
+	 config
+4) Backing services: bussiness logic must be treated as resources.
+5) Build, release and run, keep those separate.
+6) Processes: We must think apps as stateless processes. Each call must be independent of each other.
+7) Port binding: Export services via port binding.
+8)Concurrency: Scale out via the process model
+9) Disposability: Maximize robustness: if the application fails, it must fail fast, die and restart.
+10)Dev.prod parity: Keep development and production in par statuses. Are there different versions? Is the data the same? Do we have the same config files?
+11) Logs: Treat them as event streams. It is very important to create logs when we program this kind of stuff.
+12) Admin processes:
