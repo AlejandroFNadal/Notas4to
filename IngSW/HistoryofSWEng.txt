@@ -1,0 +1,8 @@
+1950: computers were more expensive than programmers. Hardware approach was used. Waterfall model.
+
+1960: Code and fix. They realized SW was very different from HW. A lot, tons of spaghetti code. Cowboy programmers. But also, Mercury, Gemini, Apolo, excellent SW. OS360 SW was very good too. But hey, it is IBM after all.
+
+First CS and informatics departments in universities.
+
+1970: Design and requirements engineering happened.
+

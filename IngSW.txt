@@ -11,3 +11,10 @@ Para regularizar: Podes salir mal dos veces
 Para aprobar: Podes salir mal una vez
 
 
+1968 Fritz Bauer, propone que en la ingenieria de sw tenemos que determinar como hacer las cosas.
+
+IEEE: SW engineering is the application of a systematic effort, disciplined and quantifiable to develop, operate and mantain SW, thus, applying engineering to SW.
+
+Pressman multilayer focus: first, to focus in quality. Then, the process that guide us in what we must do. The process must be applied to a set of methods. Then, we define and use tools to automate parts of the process. The tools are the ide, SGBD.
+
+
