@@ -1,0 +1,21 @@
+\documentclass[a4paper,12pt] {article}
+
+\begin{document}
+\title{Investigacion Operativa}
+\author{Alejandro Nadal}
+\maketitle
+What is operation research?
+
+There are certain problems in life that can be solved through operation research. Generaly, we try to improve certain quantifiable aspect through a decision.
+
+These problems have a high combinatorial solution.
+
+Lean, applied to SW Ing
+
+First reference: Tom and Mary Poppendieck, they created the term Lean Software Development. The SW Agile manifesto is important as well:
+	-Individuals and relations above processes and tools
+	-Working SW over excessive documentation
+	-Colaboration with the client over contractual negotiations
+	-Answers to change over following a plan
+
+\end{document}
