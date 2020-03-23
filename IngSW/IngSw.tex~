@@ -1,0 +1,17 @@
+\begin{document}
+\section{Risk: The basic Problem}
+SW development has a lot of risk. Schedule slips, project cancelation, sour system (high cost of manteinance), high defect rate so system is not used, bussiness not correctly understood so sw does not solve issues, bussiness changes and system cannot be updated, programmers leave, etc.
+
+\subsection{Solving these problems with XP}
+
+\begin{itemize}
+\item \textbf{Schedule slips}: Short release cycles. Within release, 1 to 4 week iterations of features, one to three day tasks, high priority first.
+\item \textbf{Project canceled} Only do the smallest release first that makes sense in the bussiness so there is less to be bad and SW has more value
+\item \textbf{Sour System}: Comprehensive suite of tests.
+\item \textbf{Defect Rate}: customers write tests as well
+\item \textbf{Bussiness misunderstood}: Cannot happen if bussiness is part of the development.
+\item \textbf{Bussiness changes}: short release cycle, customers can substitute new functionalities.
+\item \textbf{Staff turnover}: we try to keep them with us, good feedback, programmers make estimates and it is not done by people outside the project. New members are gradually inserted into the team
+  
+\end{itemize}
+\end{document}
