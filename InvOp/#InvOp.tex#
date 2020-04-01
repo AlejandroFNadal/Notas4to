@@ -109,6 +109,6 @@ Steps:
 \item What is produced?
 \item What do we want to calculate?: Variables cannot be negative
 \item Which is the objective of the bussiness? We need to reduce them to just one. We must reduce it, then, to a function to be maximized or minimized. We have to create restrictions, to be able to create an equation system. Those are called Condicion de ligadura
-\item 
+\item After modeling, we have a (in our example, X3), the excedent of resources that we are not using. We also add slack variables in the restrictions. X1 and X2 are the decision variables. 
 \end{enumerate}
 \end{document}

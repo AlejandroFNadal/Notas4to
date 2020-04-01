@@ -1,0 +1,8 @@
+\begin{document}
+\section{What is a distributed system?}
+
+Collection of independent computers that appear to the users of the system as a single system.
+
+Examples: network of workstations, distributed manufacturing systems, and network of branch office computers
+
+\end{document}

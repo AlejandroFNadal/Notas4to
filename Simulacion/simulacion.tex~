@@ -1,0 +1,16 @@
+\begin{document}
+
+Numeros pseudoaleatorios:
+
+Prueba de Medias
+... This is boring to no end. Sorry, ale from the future. You will have to look for this elsewhere.
+
+Chi-Square test:
+
+check whether random numbers are uniformly distributed between 0-1.
+
+Independence test: based on the next hypothesis:
+
+$$h_0$$ : the numbers of set r are independent.
+$$h_i$$ : the numbers of set r are not independent.
+\end{document}
