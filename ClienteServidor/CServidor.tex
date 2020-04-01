@@ -1,0 +1,87 @@
+\begin{document}
+\section{What is a distributed system?}
+
+Collection of independent computers that appear to the users of the system as a single system.
+
+Examples: network of workstations, distributed manufacturing systems, and network of branch office computers
+
+\begin{itemize}
+\item Program
+\item Process: what you get when you run the program
+\item Message: used to communicate between processes.
+\item Packet: Fragment of a message that might travel on a wirte
+\item protocol: Formal description of message formats and the rules that two processes must follow in order to exchange those messages.
+\item component: process or peace of hw required to run a process, support communication , etc
+\item distributed system: app that executes a collection of protocols to coordinate the actions of multiple processes on a network that behaves as a system 
+  
+\end{itemize}
+
+\section{Why do we build a distributed system?}
+
+It is more fault tolerant. This is common in aeroplane systems, (the duplication or triplication of elements). But distributed systems are far more resilient to failure.
+
+It is highly available, because it works even when some components are down.
+
+Recoverable: Failing components can restart themselves and rejoin yhs system after solving the issue.
+
+Consistent: The system can coordinate action by multiple components with concurrency and failure. That is what allows to a distributed system to act as a monolitc one.
+
+Scalable: monolithic systems must grow all together. Instead, distributed systems can grow in each part without bothering others.
+
+Predictable perfomance. Selfexplained.
+
+Security: bad. When we distribute, it is less secure.
+
+\section{All these are not true}
+\begin{itemize}
+\item The network is reliable
+\item Latency is zero
+\item Bandwidth is infinite
+\item The network is secure
+\item Topology doesn't change
+\item There is one administrator
+\item Transport cost is zero.
+\item The network is homogeneous. 
+\end{itemize}
+
+\section{Client-Server applications}
+
+The server provides a certain service, like a database queries, sending out stock prices, etc.
+
+The client uses the service provided by the server, either displaying database query results to the user or making stock purchase recommendations to an investor.
+
+It is common for these applications to be connected by a LAN.
+
+\section{Cluster Computing}
+
+Paralel programming, in which a single program is run in parallel on multiple machines. Each cluster is made by a collection of computer nodes that are controlled by a single master node. The master typically handles the allocation of nodes to a particular parallel program, maintains a batch queue of submitted jobs, and provides an interface for the users of the system (prime number looking counts with contributed time?: answ from prof: no, because the master does not handle all the nodes)
+
+\section{Grid Computing}
+No assumptions are made concerning similarity of HW, SO, networks, administrative domains, security policies, etc. There is a fabric layer that handles all the other components, the conectivity and the resource layer handle, well, all... they make a cluster, given the load. You have a load, the fabric layer gets the resources, get those available, loads them up, execute the task, destroy the cluster and makes the resources free again
+
+\section{Cloud computing}
+
+there is, like a grid computing at a bigger scale. It makes HW and SW disposable, as a service. First layer is infraestructure. I need 20 cpu and 20 tb of ram. The layer reserves that and makes you a `machine'. They can also give you all that, with a lot installed on it. I can also, hire software as a service,
+
+In grid, we give it the task and the fabric layer discovers what it needs. In cloud, we say how much elements do we need.
+
+\section{Architecture}
+
+\subsection{Two Tier}
+Client connects to the data sources directly. The logic remains on the client or the database.
+
+It implies to divide the problem in two tiers. Concerns must be separated.
+
+It is rather natural, we are used to apps working in these ways. It is easier to develop. It allows you to change, for example, to change a DB without affecting the user. If we add layers, it becomes slower. It is less secure.
+
+With each abstraction, performance goes down and mantainability goes usually up. Portability is a bit bad because it depends on BD tech and stuff like that.
+
+This is no longer used
+\subsection{Three Tier}
+
+Presentation Tier, Application Tier, Data Tier.
+
+\section{Microservices}
+
+Each element of functionality into a separate service. It allows for easier scaling
+\end{document}
