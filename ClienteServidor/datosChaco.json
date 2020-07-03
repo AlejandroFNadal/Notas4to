@@ -1,0 +1,2366 @@
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Concepción del Bermejo",
+    "id": "220007"
+  },
+  "departamento": {
+    "nombre": "Almirante Brown",
+    "id": "22007"
+  },
+  "nombre": "CONCEPCION DEL BERMEJO",
+  "id": "22007010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Concepción del Bermejo",
+    "id": "22007010"
+  },
+  "centroide": {
+    "lat": -26.602273964006,
+    "lon": -60.9492636999567
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Los Frentones",
+    "id": "220014"
+  },
+  "departamento": {
+    "nombre": "Almirante Brown",
+    "id": "22007"
+  },
+  "nombre": "LOS FRENTONES",
+  "id": "22007020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Los Frentones",
+    "id": "22007020"
+  },
+  "centroide": {
+    "lat": -26.4082976307567,
+    "lon": -61.4134271371597
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Pampa del Infierno",
+    "id": "220021"
+  },
+  "departamento": {
+    "nombre": "Almirante Brown",
+    "id": "22007"
+  },
+  "nombre": "PAMPA DEL INFIERNO",
+  "id": "22007030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Pampa del Infierno",
+    "id": "22007030"
+  },
+  "centroide": {
+    "lat": -26.5063974406178,
+    "lon": -61.1764901971888
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Los Frentones",
+    "id": "220014"
+  },
+  "departamento": {
+    "nombre": "Almirante Brown",
+    "id": "22007"
+  },
+  "nombre": "RIO MUERTO",
+  "id": "22007040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Río Muerto",
+    "id": "22007040"
+  },
+  "centroide": {
+    "lat": -26.3078818113872,
+    "lon": -61.6540440649869
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Taco Pozo",
+    "id": "220028"
+  },
+  "departamento": {
+    "nombre": "Almirante Brown",
+    "id": "22007"
+  },
+  "nombre": "TACO POZO",
+  "id": "22007050000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Taco Pozo",
+    "id": "22007050"
+  },
+  "centroide": {
+    "lat": -25.6156598937138,
+    "lon": -63.2692964997065
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "General Vedia",
+    "id": "220035"
+  },
+  "departamento": {
+    "nombre": "Bermejo",
+    "id": "22014"
+  },
+  "nombre": "GENERAL VEDIA",
+  "id": "22014010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "General Vedia",
+    "id": "22014010"
+  },
+  "centroide": {
+    "lat": -26.9349378591637,
+    "lon": -58.6612848328678
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Isla del Cerrito",
+    "id": "220042"
+  },
+  "departamento": {
+    "nombre": "Bermejo",
+    "id": "22014"
+  },
+  "nombre": "ISLA DEL CERRITO",
+  "id": "22014020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Isla del Cerrito",
+    "id": "22014020"
+  },
+  "centroide": {
+    "lat": -27.2927852739485,
+    "lon": -58.6178377359072
+  }
+}
+{
+  "categoria": "Componente de localidad compuesta",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "La Leonesa",
+    "id": "220049"
+  },
+  "departamento": {
+    "nombre": "Bermejo",
+    "id": "22014"
+  },
+  "nombre": "LA LEONESA",
+  "id": "22014030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "La Leonesa",
+    "id": "22014030"
+  },
+  "centroide": {
+    "lat": -27.0379596283785,
+    "lon": -58.7069377183708
+  }
+}
+{
+  "categoria": "Componente de localidad compuesta",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Las Palmas",
+    "id": "220056"
+  },
+  "departamento": {
+    "nombre": "Bermejo",
+    "id": "22014"
+  },
+  "nombre": "LAS PALMAS",
+  "id": "22014040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Las Palmas",
+    "id": "22014040"
+  },
+  "centroide": {
+    "lat": -27.0478975207771,
+    "lon": -58.6795739267563
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Puerto Bermejo",
+    "id": "220063"
+  },
+  "departamento": {
+    "nombre": "Bermejo",
+    "id": "22014"
+  },
+  "nombre": "PUERTO BERMEJO NUEVO",
+  "id": "22014050000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Puerto Bermejo Nuevo",
+    "id": "22014050"
+  },
+  "centroide": {
+    "lat": -26.9073753724695,
+    "lon": -58.5428316633796
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Puerto Bermejo",
+    "id": "220063"
+  },
+  "departamento": {
+    "nombre": "Bermejo",
+    "id": "22014"
+  },
+  "nombre": "PUERTO BERMEJO VIEJO",
+  "id": "22014060000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Puerto Bermejo Viejo",
+    "id": "22014060"
+  },
+  "centroide": {
+    "lat": -26.9285481385672,
+    "lon": -58.5063036590574
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Puerto Eva Perón",
+    "id": "220070"
+  },
+  "departamento": {
+    "nombre": "Bermejo",
+    "id": "22014"
+  },
+  "nombre": "PUERTO EVA PERON",
+  "id": "22014070000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Puerto Eva Perón",
+    "id": "22014070"
+  },
+  "centroide": {
+    "lat": -26.661480092829,
+    "lon": -58.6355818176747
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Presidencia Roque Sáenz Peña",
+    "id": "220077"
+  },
+  "departamento": {
+    "nombre": "Comandante Fernández",
+    "id": "22021"
+  },
+  "nombre": "PRESIDENCIA ROQUE SAENZ PENA",
+  "id": "22021010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Presidencia Roque Sáenz Peña",
+    "id": "22021010"
+  },
+  "centroide": {
+    "lat": -26.7916058929378,
+    "lon": -60.4421462814095
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Charata",
+    "id": "220084"
+  },
+  "departamento": {
+    "nombre": "Chacabuco",
+    "id": "22028"
+  },
+  "nombre": "CHARATA",
+  "id": "22028010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Charata",
+    "id": "22028010"
+  },
+  "centroide": {
+    "lat": -27.2200458502784,
+    "lon": -61.1915854495204
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Gancedo",
+    "id": "220091"
+  },
+  "departamento": {
+    "nombre": "12 de Octubre",
+    "id": "22036"
+  },
+  "nombre": "GANCEDO",
+  "id": "22036010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Gancedo",
+    "id": "22036010"
+  },
+  "centroide": {
+    "lat": -27.4896487904756,
+    "lon": -61.6738771708385
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "General Capdevila",
+    "id": "220098"
+  },
+  "departamento": {
+    "nombre": "12 de Octubre",
+    "id": "22036"
+  },
+  "nombre": "GENERAL CAPDEVILA",
+  "id": "22036020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "General Capdevila",
+    "id": "22036020"
+  },
+  "centroide": {
+    "lat": -27.4231812966856,
+    "lon": -61.4765845551068
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "General Pinedo",
+    "id": "220105"
+  },
+  "departamento": {
+    "nombre": "12 de Octubre",
+    "id": "22036"
+  },
+  "nombre": "GENERAL PINEDO",
+  "id": "22036030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "General Pinedo",
+    "id": "22036030"
+  },
+  "centroide": {
+    "lat": -27.3252979421708,
+    "lon": -61.282210419911
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "General Pinedo",
+    "id": "220105"
+  },
+  "departamento": {
+    "nombre": "12 de Octubre",
+    "id": "22036"
+  },
+  "nombre": "MESON DE FIERRO",
+  "id": "22036040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Mesón de Fierro",
+    "id": "22036040"
+  },
+  "centroide": {
+    "lat": -27.4312285767758,
+    "lon": -61.0177584158265
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "General Pinedo",
+    "id": "220105"
+  },
+  "departamento": {
+    "nombre": "12 de Octubre",
+    "id": "22036"
+  },
+  "nombre": "PAMPA LANDRIEL",
+  "id": "22036050000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Pampa Landriel",
+    "id": "22036050"
+  },
+  "centroide": {
+    "lat": -27.3957449255406,
+    "lon": -61.1029787390413
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Hermoso Campo",
+    "id": "220112"
+  },
+  "departamento": {
+    "nombre": "2 de Abril",
+    "id": "22039"
+  },
+  "nombre": "HERMOSO CAMPO",
+  "id": "22039010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Hermoso Campo",
+    "id": "22039010"
+  },
+  "centroide": {
+    "lat": -27.610539212014,
+    "lon": -61.344844244037
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Hermoso Campo",
+    "id": "220112"
+  },
+  "departamento": {
+    "nombre": "2 de Abril",
+    "id": "22039"
+  },
+  "nombre": "ITIN",
+  "id": "22039020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Itín",
+    "id": "22039020"
+  },
+  "centroide": {
+    "lat": -27.4876216159572,
+    "lon": -61.3238818419592
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Chorotis",
+    "id": "220119"
+  },
+  "departamento": {
+    "nombre": "Fray Justo Santa María de Oro",
+    "id": "22043"
+  },
+  "nombre": "CHOROTIS",
+  "id": "22043010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Chorotis",
+    "id": "22043010"
+  },
+  "centroide": {
+    "lat": -27.9175852858656,
+    "lon": -61.3995694680726
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Santa Sylvina",
+    "id": "220126"
+  },
+  "departamento": {
+    "nombre": "Fray Justo Santa María de Oro",
+    "id": "22043"
+  },
+  "nombre": "SANTA SYLVINA",
+  "id": "22043020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Santa Sylvina",
+    "id": "22043020"
+  },
+  "centroide": {
+    "lat": -27.8356008575455,
+    "lon": -61.1361742191871
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Chorotis",
+    "id": "220119"
+  },
+  "departamento": {
+    "nombre": "Fray Justo Santa María de Oro",
+    "id": "22043"
+  },
+  "nombre": "VENADOS GRANDES",
+  "id": "22043030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Venados Grandes",
+    "id": "22043030"
+  },
+  "centroide": {
+    "lat": -27.8181539157701,
+    "lon": -61.3815664200405
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Corzuela",
+    "id": "220113"
+  },
+  "departamento": {
+    "nombre": "General Belgrano",
+    "id": "22049"
+  },
+  "nombre": "CORZUELA",
+  "id": "22049010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Corzuela",
+    "id": "22049010"
+  },
+  "centroide": {
+    "lat": -26.9556760087163,
+    "lon": -60.9707574059512
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "La Escondida",
+    "id": "220140"
+  },
+  "departamento": {
+    "nombre": "General Donovan",
+    "id": "22056"
+  },
+  "nombre": "LA ESCONDIDA",
+  "id": "22056010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "La Escondida",
+    "id": "22056010"
+  },
+  "centroide": {
+    "lat": -27.1073248470025,
+    "lon": -59.4475325100431
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "La Verde",
+    "id": "220154"
+  },
+  "departamento": {
+    "nombre": "General Donovan",
+    "id": "22056"
+  },
+  "nombre": "LA VERDE",
+  "id": "22056020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "La Verde",
+    "id": "22056020"
+  },
+  "centroide": {
+    "lat": -27.1297934337807,
+    "lon": -59.3774619894492
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Lapachito",
+    "id": "220147"
+  },
+  "departamento": {
+    "nombre": "General Donovan",
+    "id": "22056"
+  },
+  "nombre": "LAPACHITO",
+  "id": "22056030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Lapachito",
+    "id": "22056030"
+  },
+  "centroide": {
+    "lat": -27.1587903465778,
+    "lon": -59.3903975007013
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Makallé",
+    "id": "220161"
+  },
+  "departamento": {
+    "nombre": "General Donovan",
+    "id": "22056"
+  },
+  "nombre": "MAKALLE",
+  "id": "22056040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Makallé",
+    "id": "22056040"
+  },
+  "centroide": {
+    "lat": -27.211618544441,
+    "lon": -59.2883662132688
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Villa Río Bermejito",
+    "id": "220203"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "EL ESPINILLO",
+  "id": "22063010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "El Espinillo",
+    "id": "22063010"
+  },
+  "centroide": {
+    "lat": -25.4176698636006,
+    "lon": -60.4139677023547
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "El Sauzalito",
+    "id": "220168"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "EL SAUZAL",
+  "id": "22063020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "El Sauzal",
+    "id": "22063020"
+  },
+  "centroide": {
+    "lat": -24.579149375301,
+    "lon": -61.5461702165927
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "El Sauzalito",
+    "id": "220168"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "EL SAUZALITO",
+  "id": "22063030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "El Sauzalito",
+    "id": "22063030"
+  },
+  "centroide": {
+    "lat": -24.4345499393074,
+    "lon": -61.6813716975806
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Villa Río Bermejito",
+    "id": "220203"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "FORTIN LAVALLE",
+  "id": "22063040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Fortín Lavalle",
+    "id": "22063040"
+  },
+  "centroide": {
+    "lat": -25.7056308542578,
+    "lon": -60.2037478681132
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Fuerte Esperanza",
+    "id": "220175"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "FUERTE ESPERANZA",
+  "id": "22063050000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Fuerte Esperanza",
+    "id": "22063050"
+  },
+  "centroide": {
+    "lat": -25.1560600566745,
+    "lon": -61.8424104268078
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Juan José Castelli",
+    "id": "220182"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "JUAN JOSE CASTELLI",
+  "id": "22063060000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Juan José Castelli",
+    "id": "22063060"
+  },
+  "centroide": {
+    "lat": -25.9504150377594,
+    "lon": -60.6243211030425
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Misión Nueva Pompeya",
+    "id": "220169"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "NUEVA POMPEYA",
+  "id": "22063080000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Nueva Pompeya",
+    "id": "22063080"
+  },
+  "centroide": {
+    "lat": -24.9334418837191,
+    "lon": -61.4846998398146
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Villa Río Bermejito",
+    "id": "220203"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "VILLA RIO BERMEJITO",
+  "id": "22063100000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Villa Río Bermejito",
+    "id": "22063100"
+  },
+  "centroide": {
+    "lat": -25.6424413894079,
+    "lon": -60.2629438807651
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "El Sauzalito",
+    "id": "220168"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "WICHI",
+  "id": "22063110000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Wichi",
+    "id": "22063110"
+  },
+  "centroide": {
+    "lat": -24.6913977720534,
+    "lon": -61.4304454802334
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Juan José Castelli",
+    "id": "220182"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "ZAPARINQUI",
+  "id": "22063120000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Zaparinqui",
+    "id": "22063120"
+  },
+  "centroide": {
+    "lat": -26.0673623556601,
+    "lon": -60.5633873019222
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Avia Terai",
+    "id": "220210"
+  },
+  "departamento": {
+    "nombre": "Independencia",
+    "id": "22070"
+  },
+  "nombre": "AVIA TERAI",
+  "id": "22070010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Avia Terai",
+    "id": "22070010"
+  },
+  "centroide": {
+    "lat": -26.6904269113097,
+    "lon": -60.7309487066584
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Campo Largo",
+    "id": "220217"
+  },
+  "departamento": {
+    "nombre": "Independencia",
+    "id": "22070"
+  },
+  "nombre": "CAMPO LARGO",
+  "id": "22070020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Campo Largo",
+    "id": "22070020"
+  },
+  "centroide": {
+    "lat": -26.8038644067827,
+    "lon": -60.8423032131182
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Campo Largo",
+    "id": "220217"
+  },
+  "departamento": {
+    "nombre": "Independencia",
+    "id": "22070"
+  },
+  "nombre": "FORTIN LAS CHUÑAS",
+  "id": "22070030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Fortín Las Chuñas",
+    "id": "22070030"
+  },
+  "centroide": {
+    "lat": -26.8891042551114,
+    "lon": -60.908152214423
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Napenay",
+    "id": "220224"
+  },
+  "departamento": {
+    "nombre": "Independencia",
+    "id": "22070"
+  },
+  "nombre": "NAPENAY",
+  "id": "22070040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Napenay",
+    "id": "22070040"
+  },
+  "centroide": {
+    "lat": -26.7314687114399,
+    "lon": -60.6190285151237
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Colonia Popular",
+    "id": "220231"
+  },
+  "departamento": {
+    "nombre": "Libertad",
+    "id": "22077"
+  },
+  "nombre": "COLONIA POPULAR",
+  "id": "22077010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Colonia Popular",
+    "id": "22077010"
+  },
+  "centroide": {
+    "lat": -27.2759309408353,
+    "lon": -59.1523781564389
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Puerto Tirol",
+    "id": "220254"
+  },
+  "departamento": {
+    "nombre": "Libertad",
+    "id": "22077"
+  },
+  "nombre": "ESTACION GENERAL OBLIGADO",
+  "id": "22077020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Estación General Obligado",
+    "id": "22077020"
+  },
+  "centroide": {
+    "lat": -27.4128679939929,
+    "lon": -59.4201579706051
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Laguna Blanca",
+    "id": "220238"
+  },
+  "departamento": {
+    "nombre": "Libertad",
+    "id": "22077"
+  },
+  "nombre": "LAGUNA BLANCA",
+  "id": "22077030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Laguna Blanca",
+    "id": "22077030"
+  },
+  "centroide": {
+    "lat": -27.2572195505018,
+    "lon": -59.2340486127892
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Puerto Tirol",
+    "id": "220254"
+  },
+  "departamento": {
+    "nombre": "Libertad",
+    "id": "22077"
+  },
+  "nombre": "PUERTO TIROL",
+  "id": "22077040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Puerto Tirol",
+    "id": "22077040"
+  },
+  "centroide": {
+    "lat": -27.3745125614532,
+    "lon": -59.0953159917862
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Ciervo Petiso",
+    "id": "220252"
+  },
+  "departamento": {
+    "nombre": "Libertador General San Martín",
+    "id": "22084"
+  },
+  "nombre": "CIERVO PETISO",
+  "id": "22084010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Ciervo Petiso",
+    "id": "22084010"
+  },
+  "centroide": {
+    "lat": -26.5815849580294,
+    "lon": -59.6329803967089
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Gral. San Martengeneral San Martín",
+    "id": "220259"
+  },
+  "departamento": {
+    "nombre": "Libertador General San Martín",
+    "id": "22084"
+  },
+  "nombre": "GENERAL JOSE DE SAN MARTIN",
+  "id": "22084020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "General José de San Martín",
+    "id": "22084020"
+  },
+  "centroide": {
+    "lat": -26.5340730622708,
+    "lon": -59.334711358946
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "La Eduvigis",
+    "id": "220266"
+  },
+  "departamento": {
+    "nombre": "Libertador General San Martín",
+    "id": "22084"
+  },
+  "nombre": "LA EDUVIGIS",
+  "id": "22084030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "La Eduvigis",
+    "id": "22084030"
+  },
+  "centroide": {
+    "lat": -26.8374120457599,
+    "lon": -59.0641175796047
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Laguna Limpia",
+    "id": "220273"
+  },
+  "departamento": {
+    "nombre": "Libertador General San Martín",
+    "id": "22084"
+  },
+  "nombre": "LAGUNA LIMPIA",
+  "id": "22084040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Laguna Limpia",
+    "id": "22084040"
+  },
+  "centroide": {
+    "lat": -26.4967013914467,
+    "lon": -59.6799372880349
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Pampa Almirón",
+    "id": "220280"
+  },
+  "departamento": {
+    "nombre": "Libertador General San Martín",
+    "id": "22084"
+  },
+  "nombre": "PAMPA ALMIRON",
+  "id": "22084050000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Pampa Almirón",
+    "id": "22084050"
+  },
+  "centroide": {
+    "lat": -26.702247857191,
+    "lon": -59.1237850343206
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Pampa del Indio",
+    "id": "220287"
+  },
+  "departamento": {
+    "nombre": "Libertador General San Martín",
+    "id": "22084"
+  },
+  "nombre": "PAMPA DEL INDIO",
+  "id": "22084060000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Pampa del Indio",
+    "id": "22084060"
+  },
+  "centroide": {
+    "lat": -26.050714758193,
+    "lon": -59.9412241077467
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Presidencia Roca",
+    "id": "220294"
+  },
+  "departamento": {
+    "nombre": "Libertador General San Martín",
+    "id": "22084"
+  },
+  "nombre": "PRESIDENCIA ROCA",
+  "id": "22084070000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Presidencia Roca",
+    "id": "22084070"
+  },
+  "centroide": {
+    "lat": -26.1402007626997,
+    "lon": -59.5968452905131
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "La Eduvigis",
+    "id": "220266"
+  },
+  "departamento": {
+    "nombre": "Libertador General San Martín",
+    "id": "22084"
+  },
+  "nombre": "SELVAS DEL RIO DE ORO",
+  "id": "22084080000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Selvas del Río de Oro",
+    "id": "22084080"
+  },
+  "centroide": {
+    "lat": -26.8044755779716,
+    "lon": -58.9585454452623
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Tres Isletas",
+    "id": "220301"
+  },
+  "departamento": {
+    "nombre": "Maipú",
+    "id": "22091"
+  },
+  "nombre": "TRES ISLETAS",
+  "id": "22091010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Tres Isletas",
+    "id": "22091010"
+  },
+  "centroide": {
+    "lat": -26.3378349285309,
+    "lon": -60.4299349548752
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Coronel Du Graty",
+    "id": "220308"
+  },
+  "departamento": {
+    "nombre": "Mayor Luis J. Fontana",
+    "id": "22098"
+  },
+  "nombre": "CORONEL DU GRATY",
+  "id": "22098010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Coronel Du Graty",
+    "id": "22098010"
+  },
+  "centroide": {
+    "lat": -27.682571155615,
+    "lon": -60.9091956314644
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Enrique Urien",
+    "id": "220315"
+  },
+  "departamento": {
+    "nombre": "Mayor Luis J. Fontana",
+    "id": "22098"
+  },
+  "nombre": "ENRIQUE URIEN",
+  "id": "22098020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Enrique Urien",
+    "id": "22098020"
+  },
+  "centroide": {
+    "lat": -27.5587251493486,
+    "lon": -60.5259907543736
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Villa Ángela",
+    "id": "220322"
+  },
+  "departamento": {
+    "nombre": "Mayor Luis J. Fontana",
+    "id": "22098"
+  },
+  "nombre": "VILLA ANGELA",
+  "id": "22098030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Villa Angela",
+    "id": "22098030"
+  },
+  "centroide": {
+    "lat": -27.5788592432947,
+    "lon": -60.7141120066309
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Las Breñas",
+    "id": "220329"
+  },
+  "departamento": {
+    "nombre": "9 de Julio",
+    "id": "22105"
+  },
+  "nombre": "LAS BREÑAS",
+  "id": "22105010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Las Breñas",
+    "id": "22105010"
+  },
+  "centroide": {
+    "lat": -27.0885167236059,
+    "lon": -61.0836993088858
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "La Clotilde",
+    "id": "220336"
+  },
+  "departamento": {
+    "nombre": "O'Higgins",
+    "id": "22112"
+  },
+  "nombre": "LA CLOTILDE",
+  "id": "22112010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "La Clotilde",
+    "id": "22112010"
+  },
+  "centroide": {
+    "lat": -27.1781993384686,
+    "lon": -60.6315741848516
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "La Tigra",
+    "id": "220343"
+  },
+  "departamento": {
+    "nombre": "O'Higgins",
+    "id": "22112"
+  },
+  "nombre": "LA TIGRA",
+  "id": "22112020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "La Tigra",
+    "id": "22112020"
+  },
+  "centroide": {
+    "lat": -27.1157899755692,
+    "lon": -60.5898941741226
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "San Bernardo",
+    "id": "220350"
+  },
+  "departamento": {
+    "nombre": "O'Higgins",
+    "id": "22112"
+  },
+  "nombre": "SAN BERNARDO",
+  "id": "22112030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "San Bernardo",
+    "id": "22112030"
+  },
+  "centroide": {
+    "lat": -27.2904384132605,
+    "lon": -60.7149736332962
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Presidencia de la Plaza",
+    "id": "220357"
+  },
+  "departamento": {
+    "nombre": "Presidencia de la Plaza",
+    "id": "22119"
+  },
+  "nombre": "PRESIDENCIA DE LA PLAZA",
+  "id": "22119010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Presidencia de la Plaza",
+    "id": "22119010"
+  },
+  "centroide": {
+    "lat": -27.0029714359347,
+    "lon": -59.847600385659
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Colonia Benitez",
+    "id": "220364"
+  },
+  "departamento": {
+    "nombre": "1° de Mayo",
+    "id": "22126"
+  },
+  "nombre": "BARRIO DE LOS PESCADORES",
+  "id": "22126010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Barrio de los Pescadores",
+    "id": "22126010"
+  },
+  "centroide": {
+    "lat": -27.4480426212168,
+    "lon": -58.8551013275047
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Colonia Benitez",
+    "id": "220364"
+  },
+  "departamento": {
+    "nombre": "1° de Mayo",
+    "id": "22126"
+  },
+  "nombre": "COLONIA BENITEZ",
+  "id": "22126020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Colonia Benítez",
+    "id": "22126020"
+  },
+  "centroide": {
+    "lat": -27.3305884379906,
+    "lon": -58.9450102746869
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Margarita Belén",
+    "id": "220371"
+  },
+  "departamento": {
+    "nombre": "1° de Mayo",
+    "id": "22126"
+  },
+  "nombre": "MARGARITA BELEN",
+  "id": "22126030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Margarita Belén",
+    "id": "22126030"
+  },
+  "centroide": {
+    "lat": -27.2616473234151,
+    "lon": -58.9741473116095
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Quitilipi",
+    "id": "220378"
+  },
+  "departamento": {
+    "nombre": "Quitilipi",
+    "id": "22133"
+  },
+  "nombre": "QUITILIPI",
+  "id": "22133010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Quitilipi",
+    "id": "22133010"
+  },
+  "centroide": {
+    "lat": -26.8732071732978,
+    "lon": -60.2185241226399
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Quitilipi",
+    "id": "220378"
+  },
+  "departamento": {
+    "nombre": "Quitilipi",
+    "id": "22133"
+  },
+  "nombre": "VILLA EL PALMAR",
+  "id": "22133020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Villa El Palmar",
+    "id": "22133020"
+  },
+  "centroide": {
+    "lat": -26.4551186226266,
+    "lon": -60.1646165913523
+  }
+}
+{
+  "categoria": "Componente de localidad compuesta",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Barranqueras",
+    "id": "220385"
+  },
+  "departamento": {
+    "nombre": "San Fernando",
+    "id": "22140"
+  },
+  "nombre": "BARRANQUERAS",
+  "id": "22140010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Barranqueras",
+    "id": "22140010"
+  },
+  "centroide": {
+    "lat": -27.4877739289761,
+    "lon": -58.9327416886365
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Basail",
+    "id": "220392"
+  },
+  "departamento": {
+    "nombre": "San Fernando",
+    "id": "22140"
+  },
+  "nombre": "BASAIL",
+  "id": "22140020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Basail",
+    "id": "22140020"
+  },
+  "centroide": {
+    "lat": -27.8868655966917,
+    "lon": -59.2791003619491
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Resistencia",
+    "id": "220413"
+  },
+  "departamento": {
+    "nombre": "San Fernando",
+    "id": "22140"
+  },
+  "nombre": "COLONIA BARANDA",
+  "id": "22140030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Colonia Baranda",
+    "id": "22140030"
+  },
+  "centroide": {
+    "lat": -27.5620449432874,
+    "lon": -59.3096911774268
+  }
+}
+{
+  "categoria": "Componente de localidad compuesta",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Fontana",
+    "id": "220399"
+  },
+  "departamento": {
+    "nombre": "San Fernando",
+    "id": "22140"
+  },
+  "nombre": "FONTANA",
+  "id": "22140040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Fontana",
+    "id": "22140040"
+  },
+  "centroide": {
+    "lat": -27.4167127425858,
+    "lon": -59.04393778912
+  }
+}
+{
+  "categoria": "Componente de localidad compuesta",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Puerto Vilelas",
+    "id": "220406"
+  },
+  "departamento": {
+    "nombre": "San Fernando",
+    "id": "22140"
+  },
+  "nombre": "PUERTO VILELAS",
+  "id": "22140050000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Puerto Vilelas",
+    "id": "22140050"
+  },
+  "centroide": {
+    "lat": -27.5106090846354,
+    "lon": -58.938994465923
+  }
+}
+{
+  "categoria": "Componente de localidad compuesta",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Resistencia",
+    "id": "220413"
+  },
+  "departamento": {
+    "nombre": "San Fernando",
+    "id": "22140"
+  },
+  "nombre": "RESISTENCIA",
+  "id": "22140060000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Resistencia",
+    "id": "22140060"
+  },
+  "centroide": {
+    "lat": -27.4521194584549,
+    "lon": -58.9876174408016
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Samuhú",
+    "id": "220420"
+  },
+  "departamento": {
+    "nombre": "San Lorenzo",
+    "id": "22147"
+  },
+  "nombre": "SAMUHU",
+  "id": "22147010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Samuhú",
+    "id": "22147010"
+  },
+  "centroide": {
+    "lat": -27.5222254234698,
+    "lon": -60.3941746057505
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Villa Berthet",
+    "id": "220427"
+  },
+  "departamento": {
+    "nombre": "San Lorenzo",
+    "id": "22147"
+  },
+  "nombre": "VILLA BERTHET",
+  "id": "22147020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Villa Berthet",
+    "id": "22147020"
+  },
+  "centroide": {
+    "lat": -27.2895492409257,
+    "lon": -60.4155962080604
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Capitán Solari",
+    "id": "220434"
+  },
+  "departamento": {
+    "nombre": "Sargento Cabral",
+    "id": "22154"
+  },
+  "nombre": "CAPITAN SOLARI",
+  "id": "22154010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Capitán Solari",
+    "id": "22154010"
+  },
+  "centroide": {
+    "lat": -26.8050732181614,
+    "lon": -59.5596523744138
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Colonias Elisa",
+    "id": "220441"
+  },
+  "departamento": {
+    "nombre": "Sargento Cabral",
+    "id": "22154"
+  },
+  "nombre": "COLONIA ELISA",
+  "id": "22154020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Colonia Elisa",
+    "id": "22154020"
+  },
+  "centroide": {
+    "lat": -26.9324550960675,
+    "lon": -59.5204851339372
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Colonias Unidas",
+    "id": "220448"
+  },
+  "departamento": {
+    "nombre": "Sargento Cabral",
+    "id": "22154"
+  },
+  "nombre": "COLONIAS UNIDAS",
+  "id": "22154030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Colonias Unidas",
+    "id": "22154030"
+  },
+  "centroide": {
+    "lat": -26.7000971775462,
+    "lon": -59.6277421824927
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Colonias Elisa",
+    "id": "220441"
+  },
+  "departamento": {
+    "nombre": "Sargento Cabral",
+    "id": "22154"
+  },
+  "nombre": "INGENIERO BARBET",
+  "id": "22154040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Ingeniero Barbet",
+    "id": "22154040"
+  },
+  "centroide": {
+    "lat": -27.0032121063146,
+    "lon": -59.4825136520473
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Las Garcitas",
+    "id": "220455"
+  },
+  "departamento": {
+    "nombre": "Sargento Cabral",
+    "id": "22154"
+  },
+  "nombre": "LAS GARCITAS",
+  "id": "22154050000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Las Garcitas",
+    "id": "22154050"
+  },
+  "centroide": {
+    "lat": -26.6193460346699,
+    "lon": -59.8042763819042
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Charadai",
+    "id": "220469"
+  },
+  "departamento": {
+    "nombre": "Tapenagá",
+    "id": "22161"
+  },
+  "nombre": "CHARADAI",
+  "id": "22161010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Charadai",
+    "id": "22161010"
+  },
+  "centroide": {
+    "lat": -27.6553304709616,
+    "lon": -59.8624460245382
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Cote Lai",
+    "id": "220462"
+  },
+  "departamento": {
+    "nombre": "Tapenagá",
+    "id": "22161"
+  },
+  "nombre": "COTE LAI",
+  "id": "22161020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Cote Lai",
+    "id": "22161020"
+  },
+  "centroide": {
+    "lat": -27.5303116601138,
+    "lon": -59.5765171513905
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Charadai",
+    "id": "220469"
+  },
+  "departamento": {
+    "nombre": "Tapenagá",
+    "id": "22161"
+  },
+  "nombre": "HAUMONIA",
+  "id": "22161030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Haumonia",
+    "id": "22161030"
+  },
+  "centroide": {
+    "lat": -27.5077849029352,
+    "lon": -60.1635277537413
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Charadai",
+    "id": "220469"
+  },
+  "departamento": {
+    "nombre": "Tapenagá",
+    "id": "22161"
+  },
+  "nombre": "HORQUILLA",
+  "id": "22161040000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Horquilla",
+    "id": "22161040"
+  },
+  "centroide": {
+    "lat": -27.5427589336639,
+    "lon": -59.9578541039413
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Charadai",
+    "id": "220469"
+  },
+  "departamento": {
+    "nombre": "Tapenagá",
+    "id": "22161"
+  },
+  "nombre": "LA SABANA",
+  "id": "22161050000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "La Sabana",
+    "id": "22161050"
+  },
+  "centroide": {
+    "lat": -27.8738009106984,
+    "lon": -59.939569589112
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Machagai",
+    "id": "220476"
+  },
+  "departamento": {
+    "nombre": "25 de Mayo",
+    "id": "22168"
+  },
+  "nombre": "COLONIA ABORIGEN",
+  "id": "22168010000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Colonia Aborigen",
+    "id": "22168010"
+  },
+  "centroide": {
+    "lat": -26.9583436350996,
+    "lon": -60.1902370459592
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Machagai",
+    "id": "220476"
+  },
+  "departamento": {
+    "nombre": "25 de Mayo",
+    "id": "22168"
+  },
+  "nombre": "MACHAGAI",
+  "id": "22168020000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Machagai",
+    "id": "22168020"
+  },
+  "centroide": {
+    "lat": -26.9287335504143,
+    "lon": -60.0477196130638
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Machagai",
+    "id": "220476"
+  },
+  "departamento": {
+    "nombre": "25 de Mayo",
+    "id": "22168"
+  },
+  "nombre": "NAPALPI",
+  "id": "22168030000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Napalpí",
+    "id": "22168030"
+  },
+  "centroide": {
+    "lat": -26.9032617040064,
+    "lon": -60.1173839257014
+  }
+}
+{
+  "categoria": "Localidad simple",
+  "fuente": "INDEC",
+  "municipio": {
+    "nombre": "Miraflores",
+    "id": "220189"
+  },
+  "departamento": {
+    "nombre": "General Güemes",
+    "id": "22063"
+  },
+  "nombre": "MIRAFLORES",
+  "id": "22063070000",
+  "provincia": {
+    "nombre": "Chaco",
+    "id": "22"
+  },
+  "localidad_censal": {
+    "nombre": "Miraflores",
+    "id": "22063070"
+  },
+  "centroide": {
+    "lat": -25.6489334968628,
+    "lon": -60.9300401901344
+  }
+}

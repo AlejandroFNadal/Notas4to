@@ -1,0 +1,39 @@
+30170311597	Stat Rx USA	13	General Pinedo	Hornero	511
+30338677856	Contract Pharmacy Services-PA	7	Quitilipi	Bertacca	511
+32099155036	Unither Manufacturing, LLC	5	Juan Jose Castelli	Lima	8
+32924269785	Greenbrier International, Inc.	7	Quitilipi	Nicolas Avellaneda	3017
+34557484136	Conopco Inc. d/b/a Unilever	14	Corzuela	Saavedra	55314
+34636791677	Camber Pharmaceuticals	4	General Jose de San Martin	Fortin Rivadavia	5
+34913892060	Lannett Company, Inc.	13	General Pinedo	Edison	6
+34978912235	Filo America	9	Machagai	Juan B. Justo	67
+35003757065	Purminerals	3	Villa Angela	French	802
+35614190094	H.J. Harkins Company, Inc.	13	General Pinedo	Av Italia	209
+35983769858	Bare Escentuals Beauty Inc.	1	Resistencia	Los Hacheros	52117
+36076664730	Dispensing Solutions Inc.	8	Las Breñas	Misiones	38248
+36499109584	VVF Kansas Services LLC	4	General Jose de San Martin	Andreani	65422
+36961847100	Hospira, Inc	3	Villa Angela	Alemania	3921
+37839956469	Physicians Total Care, Inc.	2	Presidencia Roque Saenz Peña	Mitre	7745
+39384898602	Rite Aid Corporation	11	La Leonesa	Amegino	10
+39388937798	Mylan Institutional LLC	14	Corzuela	Echeverria	2794
+39995164948	Perrigo New York Inc	6	Charata	Toledo	81800
+40852579831	Qualitest Pharmaceuticals	4	General Jose de San Martin	Freschi	43
+40961085344	PUREMEDY	7	Quitilipi	Santa Fe	596
+41070221950	Walgreen Company	3	Villa Angela	Entre Rios	2
+42020390272	Energetix Corp	14	Corzuela	Jose Maria Paz	4174
+42059316764	The Body Shop Wake Forest	7	Quitilipi	Av 25 de Mayo	2173
+42668055615	B. Braun Medical Inc.	10	Tres Isletas	Los Andes	1
+42720753018	Western Family Foods, Inc.	11	La Leonesa	Franklin	970
+44250491896	Aurobindo Pharma Limited	12	Las Palmas	San Roque	73776
+45113796126	Hospira Worldwide, Inc.	7	Quitilipi	Corrientes	99724
+45289437675	3M ESPE Dental Products	3	Villa Angela	Av Avalos	887
+45523456321	Sandoz Inc	6	Charata	Necochea	47642
+45765995792	Hospira, Inc.	15	Villa Berthet	Cangallo	586
+45883444461	Rising Pharmaceuticals, Inc	6	Charata	Roldan	79
+46438330946	Glenmark Generics Inc., USA	8	Las Breñas	Jujuy	5351
+46696965888	Promex, LLC	5	Juan Jose Castelli	Muñiz	2
+46873745893	Precision Dermatology, Inc.	6	Charata	Salta	29
+47069407799	Amgen Inc	13	General Pinedo	AYacucho	94
+47981316204	AvKARE, Inc.	5	Juan Jose Castelli	1ro de Mayo	83515
+48587001401	DZA Brands LLC	3	Villa Angela	Paraguay	411
+49259815744	Teva Pharmaceuticals USA Inc	13	General Pinedo	Lustringer	55281
+49416356774	PD-Rx Pharmaceuticals, Inc.	14	Corzuela	Obligado	9
