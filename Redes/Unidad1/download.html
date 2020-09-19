@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Seriously, stop using RSA | Trail of Bits Blog</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://blog.trailofbits.com/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="https://blog.trailofbits.com/wp-content/themes/everyday/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<!-- Jetpack Site Verification Tags -->
+<meta name="google-site-verification" content="Lbyyor8qrpJf-6qi1ql45JDKAmXUIcc3N0mFeVNwUok" />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//widgets.wp.com' />
+<link rel='dns-prefetch' href='//jetpack.wordpress.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//s1.wp.com' />
+<link rel='dns-prefetch' href='//s2.wp.com' />
+<link rel='dns-prefetch' href='//public-api.wordpress.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='dns-prefetch' href='//i1.wp.com' />
+<link rel='dns-prefetch' href='//i2.wp.com' />
+<link rel='dns-prefetch' href='//c0.wp.com' />
+<link rel="alternate" type="application/rss+xml" title="Trail of Bits Blog &raquo; Feed" href="https://blog.trailofbits.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Trail of Bits Blog &raquo; Comments Feed" href="https://blog.trailofbits.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Trail of Bits Blog &raquo; Seriously, stop using RSA Comments Feed" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blog.trailofbits.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-e0760ea0ffeda424cce199dc9679c3fb' href='https://blog.trailofbits.com/_static/??-eJyFUNFOwzAM/CEyb0xC8ID4FOTGVmqaxFXirOTvaafxAAz1xTrbd6ezl9l5zcbZYI4tSK4Q2toOXAIMTSLBENVPLspQsHSo1iMffK0Py19pxK7NXChC94mpuW/uMntNdYQLZ9IC2EwTmokH409ziUnQLUKBzV29KqxmcJtsnP9SfLDN6CdISm2TRZnWejePjZzWHV+4dMKd63771hELExL1K5Qc9pTvkj1U9YLRRQ1afzSHJHnPYXvBDW/Ut/R6ejoez+fnl8fTF4tJr70=' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--color--black:#000000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--white:#ffffff;--wp--preset--font-size--small:13;--wp--preset--font-size--normal:16;--wp--preset--font-size--medium:20;--wp--preset--font-size--large:36;--wp--preset--font-size--huge:48;--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);}
+</style>
+<link rel='stylesheet' id='everyday-droid-serif-css'  href='https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C700%2C400italic%2C700italic&#038;ver=20120328' media='all' />
+<link rel='stylesheet' id='everyday-droid-sans-css'  href='https://fonts.googleapis.com/css?family=Droid+Sans%3A400%2C700&#038;ver=20120328' media='all' />
+<link rel='stylesheet' id='everyday-droid-mono-css'  href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono&#038;ver=20120328' media='all' />
+<style id='jetpack-global-styles-frontend-style-inline-css'>
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<script src='https://blog.trailofbits.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<link rel="https://api.w.org/" href="https://blog.trailofbits.com/wp-json/" /><link rel="alternate" type="application/json" href="https://blog.trailofbits.com/wp-json/wp/v2/posts/98915" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.trailofbits.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.trailofbits.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Avoiding Smart Contract “Gridlock” with Slither' href='https://blog.trailofbits.com/2019/07/03/avoiding-smart-contract-gridlock-with-slither/' />
+<link rel='next' title='On LibraBFT’s use of broadcasts' href='https://blog.trailofbits.com/2019/07/12/librabft/' />
+
+<link rel="canonical" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/" />
+<link rel='shortlink' href='https://blog.trailofbits.com/?p=98915' />
+<link rel="alternate" type="application/json+oembed" href="https://blog.trailofbits.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.trailofbits.com%2F2019%2F07%2F08%2Ffuck-rsa%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://blog.trailofbits.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.trailofbits.com%2F2019%2F07%2F08%2Ffuck-rsa%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><style>
+#page {
+	background-color: #f7f7f7;
+}
+</style>
+
+<meta name="description" content="Here at Trail of Bits we review a lot of code. From major open source projects to exciting new proprietary software, we’ve seen it all. But one common denominator in all of these systems is that for some inexplicable reason people still seem to think RSA is a good cryptosystem to use. Let me save&hellip;" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-image: url("https://blog.trailofbits.com/wp-content/themes/everyday/images/background.png"); background-position: left top; background-size: auto; background-repeat: repeat; background-attachment: scroll; }
+</style>
+				<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Seriously, stop using RSA" />
+<meta property="og:url" content="https://blog.trailofbits.com/2019/07/08/fuck-rsa/" />
+<meta property="og:description" content="Here at Trail of Bits we review a lot of code. From major open source projects to exciting new proprietary software, we’ve seen it all. But one common denominator in all of these systems is that fo…" />
+<meta property="article:published_time" content="2019-07-08T10:50:43+00:00" />
+<meta property="article:modified_time" content="2019-07-09T03:01:55+00:00" />
+<meta property="og:site_name" content="Trail of Bits Blog" />
+<meta property="og:image" content="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?fit=992%2C962&amp;ssl=1" />
+<meta property="og:image:width" content="992" />
+<meta property="og:image:height" content="962" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@trailofbits" />
+<meta name="twitter:text:title" content="Seriously, stop using RSA" />
+<meta name="twitter:image" content="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?fit=992%2C962&#038;ssl=1&#038;w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="icon" href="https://i0.wp.com/blog.trailofbits.com/wp-content/uploads/2020/07/cropped-android-chrome-512x512-1.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+<link rel="icon" href="https://i0.wp.com/blog.trailofbits.com/wp-content/uploads/2020/07/cropped-android-chrome-512x512-1.png?fit=192%2C192&#038;ssl=1" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://i0.wp.com/blog.trailofbits.com/wp-content/uploads/2020/07/cropped-android-chrome-512x512-1.png?fit=180%2C180&#038;ssl=1" />
+<meta name="msapplication-TileImage" content="https://i0.wp.com/blog.trailofbits.com/wp-content/uploads/2020/07/cropped-android-chrome-512x512-1.png?fit=270%2C270&#038;ssl=1" />
+			<style type="text/css" id="wp-custom-css">
+				/*
+Welcome to Custom CSS!
+
+To learn how this works, see http://wp.me/PEmnE-Bt
+*/
+.entry-content {
+	padding-left: 0;
+}
+
+.entry-content
+blockquote {
+	margin-left: 25px;
+}
+
+.entry-content
+.embed {
+	margin-left: 0;
+}
+
+.entry-content
+.embed-youtube {
+	margin-left: 0;
+}
+
+/* To remove the infinite scroll footer HC-23308875-SK */
+#infinite-footer
+{
+  display:none;
+}			</style>
+		</head>
+
+<body class="post-template-default single single-post postid-98915 single-format-standard custom-background group-blog">
+<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="https://blog.trailofbits.com/" title="Trail of Bits Blog" rel="home">Trail of Bits Blog</a></h1>
+			<h2 class="site-description"></h2>
+					</hgroup>
+
+		<nav role="navigation" class="site-navigation main-navigation">
+			<h1 class="assistive-text">Menu</h1>
+			<div class="assistive-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+			<div class="menu"><ul>
+<li ><a href="https://blog.trailofbits.com/">Home</a></li></ul></div>
+		</nav>
+	</header><!-- #masthead .site-header -->
+
+	<div id="main" class="main">
+		<div id="primary" class="site-content">
+			<div id="content" role="main">
+
+			
+				
+<article id="post-98915" class="post-98915 post type-post status-publish format-standard hentry category-cryptography category-press-release entry">
+	<header class="entry-header">
+
+		<h1 class="entry-title">Seriously, stop using RSA</h1>
+					<ul class="entry-meta">
+				<li class="entry-format">Post</li>
+				<li class="permalink"><a href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/" title="6:50 am" rel="bookmark"><time class="entry-date" datetime="2019-07-08T06:50:43-04:00" pubdate>July 8, 2019</time></a></li>
+				<li class="comment-link"><a href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comments">18 Comments</a></li>
+							</ul><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Here at Trail of Bits we review a lot of code. From major open source projects to exciting new proprietary software, we’ve seen it all. But one common denominator in all of these systems is that for some inexplicable reason people still seem to think RSA is a good cryptosystem to use. Let me save you a bit of time and money and just say outright—if you come to us with a codebase that uses RSA, you will be paying for the hour of time required for us to explain why you should stop using it.</p>
+<p>RSA is an intrinsically fragile cryptosystem containing countless foot-guns which the average software engineer cannot be expected to avoid. Weak parameters can be difficult, if not impossible, to check, and its poor performance compels developers to take risky shortcuts. Even worse, padding oracle attacks remain rampant 20 years after they were discovered. While it may be theoretically possible to implement RSA correctly, decades of devastating attacks have proven that such a feat may be unachievable in practice.</p>
+<p><span class="embed-youtube" style="text-align:center; display: block;"><iframe class='youtube-player' width='690' height='389' src='https://www.youtube.com/embed/lElHzac8DDI?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe></span></p>
+<h2>What is RSA again?</h2>
+<p>RSA is a public-key cryptosystem that has two primary use cases. The first is public key encryption, which lets a user, Alice, publish a public key that allows anyone to send her an encrypted message. The second use case is digital signatures, which allow Alice to “sign” a message so that anyone can verify the message hasn’t been tampered with. The convenient thing about RSA is that the signing algorithm is basically just the encryption algorithm run in reverse. Therefore for the rest of this post we’ll often refer to both as just RSA.</p>
+<p>To set up RSA, Alice needs to choose two primes <code>p</code> and <code>q</code> that will generate the group of integers modulo <code>N = pq</code>. She then needs to choose a public exponent <code>e</code> and private exponent <code>d</code> such that <code>ed = 1 mod (p-1)(q-1)</code>. Basically, <code>e</code> and <code>d</code> need to be inverses of each other.</p>
+<p>Once these parameters have been chosen, another user, Bob, can send Alice a message <code>M</code> by computing <code>C = M<sup>e</sup> (mod N)</code>. Alice can then decrypt the ciphertext by computing <code>M = C<sup>d</sup> (mod N)</code>. Conversely, if Alice wants to sign a message <code>M</code>, she computes <code>S = M<sup>d</sup> (mod N)</code>, which any user can verify was signed by her by checking <code>M = S<sup>e</sup> (mod N)</code>.</p>
+<p>That’s the basic idea. We’ll get to padding—essential for both use cases—in a bit, but first let’s see what can go wrong during parameter selection.</p>
+<h2>Setting yourself up for failure</h2>
+<p>RSA requires developers to choose quite a few parameters during setup. Unfortunately, seemingly innocent parameter-selection methods degrade security in subtle ways. Let’s walk through each parameter choice and see what nasty surprises await those who choose poorly.</p>
+<h3>Prime Selection</h3>
+<p>RSA’s security is based off the fact that, given a (large) number N that’s the product of two primes p and q, factoring N is hard for people who don’t know p and q. Developers are responsible for choosing the primes that make up the RSA modulus. This process is extremely slow compared to key generation for other cryptographic protocols, where simply choosing some random bytes is sufficient. Therefore, instead of generating a truly random prime number, developers often attempt to generate one of a specific form. This almost always ends badly.</p>
+<p>There are many ways to choose primes in such a way that factoring N is easy. For example, p and q must be <em>globally</em> unique. If p or q ever gets reused in another RSA moduli, then both can be easily factored using the GCD algorithm. Bad random number generators make this scenario somewhat common, and <a href="https://factorable.net/weakkeys12.conference.pdf">research has shown</a> that roughly 1% of TLS traffic in 2012 was susceptible to such an attack. Moreover, p and q must be chosen independently. If p and q share approximately half of their upper bits, then N can be factored using <a href="https://en.wikipedia.org/wiki/Fermat%27s_factorization_method">Fermat’s method</a>. In fact, even the choice of primality testing algorithm can have <a href="https://eprint.iacr.org/2018/749">security implications</a>.</p>
+<p>Perhaps the most widely-publicized prime selection attack is the <a href="https://en.wikipedia.org/wiki/ROCA_vulnerability">ROCA</a> vulnerability in RSALib which affected many smartcards, trusted platform modules, and even Yubikeys. Here, key generation only used primes of a specific form to speed up computation time. Primes generated this way are trivial to detect using clever number theory tricks. Once a weak system has been recognized, the special algebraic properties of the primes allow an attacker to use <a href="https://en.wikipedia.org/wiki/Coppersmith%27s_attack">Coppersmith’s method</a> to factor N. More concretely, that means if the person sitting next to me at work uses a smartcard granting them access to private documents, and they leave it on their desk during lunch, I can clone the smartcard and give myself access to all their sensitive files.</p>
+<p>It’s important to recognize that in none of these cases is it intuitively obvious that generating primes in such a way leads to complete system failure. Really subtle number-theoretic properties of primes have a substantial effect on the security of RSA. To expect the average developer to navigate this mathematical minefield severely undermines RSA’s safety.</p>
+<h3>Private Exponent</h3>
+<p>Since using a large private key negatively affects decryption and signing time, developers have an incentive to choose a small private exponent d, especially in low-power settings like smartcards. However, it is possible for an attacker to <a href="https://en.wikipedia.org/wiki/Wiener%27s_attack">recover the private key</a> when d is less than the 4th root of N. Instead, developers are encouraged to choose a large d such that <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Using_the_Chinese_remainder_algorithm">Chinese remainder theorem techniques</a> can be used to speed up decryption. However, this approach’s complexity increases the probability of subtle implementation errors, which <a href="https://www.cs.tau.ac.il/~tromer/courses/infosec11/Boneh%20DeMillo%20Lipton%201997%20---%20On%20the%20importance%20of%20eliminating%20errors%20in%20cryptographic%20protocols.pdf">can lead to key recovery</a>. In fact, one of our interns last summer <a href="https://blog.trailofbits.com/2018/08/14/fault-analysis-on-rsa-signing/">modelled this class of vulnerabilities</a> with our symbolic execution tool <a href="https://github.com/trailofbits/manticore">Manticore</a>.</p>
+<p><a href="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?ssl=1"><img data-attachment-id="98920" data-permalink="https://blog.trailofbits.com/2019/07/08/fuck-rsa/image13-4/" data-orig-file="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?fit=992%2C962&amp;ssl=1" data-orig-size="992,962" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image13" data-image-description data-medium-file="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?fit=300%2C291&amp;ssl=1" data-large-file="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?fit=690%2C669&amp;ssl=1" loading="lazy" class="aligncenter wp-image-98920 jetpack-lazy-image" style="border:1px solid #000000;" src="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?resize=500%2C485&#038;ssl=1" alt width="500" height="485" data-recalc-dims="1" data-lazy-src="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?resize=500%2C485&amp;is-pending-load=1#038;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-attachment-id="98920" data-permalink="https://blog.trailofbits.com/2019/07/08/fuck-rsa/image13-4/" data-orig-file="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?fit=992%2C962&amp;ssl=1" data-orig-size="992,962" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image13" data-image-description="" data-medium-file="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?fit=300%2C291&amp;ssl=1" data-large-file="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?fit=690%2C669&amp;ssl=1" loading="lazy" class="aligncenter wp-image-98920" style="border:1px solid #000000;" src="https://i1.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image13-1.png?resize=500%2C485&#038;ssl=1" alt="" width="500" height="485" data-recalc-dims="1" /></noscript></a></p>
+<p>People might call me out here and point out that normally when setting up RSA you first generate a modulus, use a fixed public exponent, and then solve for the private exponent. This prevents low private exponent attacks because if you always use one of the recommended public exponents (discussed in the next section) then you’ll never wind up with a small private exponent. Unfortunately this assumes developers actually do that. In circumstances where people implement their own RSA, all bets are off in terms of using standard RSA setup procedures, and developers will frequently do strange things like choose the private exponent first and then solve for the public exponent.</p>
+<h3>Public Exponent</h3>
+<p>Just as in the private exponent case, implementers want to use small public exponents to save on encryption and verification time. It is common to use Fermat primes in this context, in particular e = 3, 17, and 65537. Despite cryptographers recommending the use of 65537, developers often choose e = 3 which introduces many vulnerabilities into the RSA cryptosystem.</p>
+<div id="attachment_98921" style="width: 700px" class="wp-caption aligncenter"><a href="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?ssl=1"><img aria-describedby="caption-attachment-98921" data-attachment-id="98921" data-permalink="https://blog.trailofbits.com/2019/07/08/fuck-rsa/image12-3/" data-orig-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?fit=1660%2C1384&amp;ssl=1" data-orig-size="1660,1384" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image12" data-image-description data-medium-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?fit=300%2C250&amp;ssl=1" data-large-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?fit=690%2C575&amp;ssl=1" loading="lazy" class="wp-image-98921 size-large jetpack-lazy-image" style="border:1px solid #000000;" src="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?resize=690%2C575&#038;ssl=1" alt width="690" height="575" data-recalc-dims="1" data-lazy-src="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?resize=690%2C575&amp;is-pending-load=1#038;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img aria-describedby="caption-attachment-98921" data-attachment-id="98921" data-permalink="https://blog.trailofbits.com/2019/07/08/fuck-rsa/image12-3/" data-orig-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?fit=1660%2C1384&amp;ssl=1" data-orig-size="1660,1384" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image12" data-image-description="" data-medium-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?fit=300%2C250&amp;ssl=1" data-large-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?fit=690%2C575&amp;ssl=1" loading="lazy" class="wp-image-98921 size-large" style="border:1px solid #000000;" src="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image12.png?resize=690%2C575&#038;ssl=1" alt="" width="690" height="575" data-recalc-dims="1" /></noscript></a><p id="caption-attachment-98921" class="wp-caption-text">Developers have even used e = 1, which doesn’t actually encrypt the plaintext</p></div>
+<p>When e = 3, or a similarly small number, many things can go wrong. Low public exponents often combine with other common mistakes to either allow an attacker to decrypt specific ciphertexts or factor N. For instance, <a href="https://en.wikipedia.org/wiki/Coppersmith%27s_attack#Franklin-Reiter_related-message_attack">the Franklin-Reiter attack</a> allows a malicious party to decrypt two messages that are related by a known, fixed distance. In other words, suppose Alice only sends “chocolate” or “vanilla” to Bob. These messages will be related by a known value and allow an attacker Eve to determine which are “chocolate” and which are “vanilla.” Some low public exponent attacks even lead to key recovery. If the public exponent is small (not just 3), an attacker who knows several bits of the secret key can recover the remaining bits and break the cryptosystem. While many of these e = 3 attacks on RSA encryption are mitigated by padding, developers who implement their own RSA fail to use padding at an alarmingly high rate.</p>
+<p>RSA signatures are equally brittle in the presence of low public exponents. In 2006, Bleichenbacher found an <a href="https://www.imperialviolet.org/2014/09/26/pkcs1.html">attack</a> which allows attackers to forge arbitrary signatures in many RSA implementations, including the ones used by <a href="https://www.imperialviolet.org/2014/09/26/pkcs1.html">Firefox and Chrome</a>. This means that any TLS certificate from a vulnerable implementation could be forged. This attack takes advantage of the fact that many libraries use a small public exponent and omit a simple padding verification check when processing RSA signatures. Bleichenbacher’s signature forgery attack is so simple that it is a <a href="https://cryptopals.com/sets/6/challenges/42">commonly used exercise</a> in cryptography courses.</p>
+<h3>Parameter Selection is Hard</h3>
+<p>The common denominator in all of these parameter attacks is that the domain of possible parameter choices is much larger than that of secure parameter choices. Developers are expected to navigate this fraught selection process on their own, since all but the public exponent must be generated privately. There are no easy ways to check that the parameters are secure; instead developers need a depth of mathematical knowledge that shouldn’t be expected of non-cryptographers. While using RSA with padding may save you in the presence of bad parameters, many people still choose to use broken padding or no padding at all.</p>
+<h2>Padding oracle attacks everywhere</h2>
+<p>As we mentioned above, just using RSA out of the box doesn’t quite work. For example, the RSA scheme laid out in the introduction would produce identical ciphertexts if the same plaintext were ever encrypted more than once. This is a problem, because it would allow an adversary to infer the contents of the message from context without being able to decrypt it. This is why we need to pad messages with some random bytes. Unfortunately, the most widely used padding scheme, PKCS #1 v1.5, is often vulnerable to something called a padding oracle attack.</p>
+<p>Padding oracles are pretty complex, but the high-level idea is that adding padding to a message requires the recipient to perform an additional check&#8211;whether the message is properly padded. When the check fails, the server throws an <em>invalid padding</em> error. That single piece of information is enough to slowly decrypt a chosen message. The process is tedious and involves manipulating the target ciphertext millions of times to isolate the changes which result in valid padding. But that one error message is all you need to eventually decrypt a chosen ciphertext. These vulnerabilities are particularly bad because attackers can use them to recover pre-master secrets for TLS sessions. For more details on the attack, check out <a href="https://crypto.stackexchange.com/questions/12688/can-you-explain-bleichenbachers-cca-attack-on-pkcs1-v1-5">this excellent explainer</a>.</p>
+<p>The <a href="https://crypto.stackexchange.com/questions/12688/can-you-explain-bleichenbachers-cca-attack-on-pkcs1-v1-5">original attack</a> on PKCS #1 v1.5 was discovered way back in 1998 by Daniel Bleichenbacher. Despite being over 20 years old, this attack continues to <a href="https://www.ei.ruhr-uni-bochum.de/media/nds/veroeffentlichungen/2018/08/13/sec18-felsch.pdf">plague</a> <a href="https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-meyer.pdf">many</a> <a href="https://robotattack.org/">real-world</a> <a href="https://blog.cryptographyengineering.com/2016/03/01/attack-of-week-drown/">systems</a> <a href="https://eprint.iacr.org/2018/1173.pdf">today</a>. Modern versions of this attack often involves a padding oracle slightly more complex than the one originally described by Bleichenbacher, such as server response time or performing some sort of protocol downgrade in TLS. One particularly shocking example was <a href="https://robotattack.org/">the ROBOT attack</a>, which was so bad that a team of researchers were able to sign messages with Facebook’s and PayPal’s secret keys. Some might argue that this isn’t actually RSA’s fault &#8211; the underlying math is fine, people just messed up an important standard several decades ago. The thing is, we’ve had a standardized padding scheme with a rigorous security proof, OAEP, since 1998. But almost no one uses it. Even when they do, OAEP is notoriously difficult to implement and often is vulnerable to <a href="https://research.kudelskisecurity.com/2018/04/05/breaking-rsa-oaep-with-mangers-attack/">Manger’s attack</a>, which is <em>another</em> padding oracle attack that can be used to recover plaintext.</p>
+<p>The fundamental issue here is that padding is <em>necessary</em> when using RSA, and this added complexity opens the cryptosystem up to a large attack surface. The fact that a single bit of information, whether the message was padded correctly, can have such a large impact on security makes developing secure libraries almost impossible. TLS 1.3 no longer supports RSA so we can expect to see fewer of these attacks going forward, but as long as developers continue to use RSA in their own applications there will be padding oracle attacks.</p>
+<h2>So what should you use instead?</h2>
+<p>People often prefer using RSA because they believe it’s conceptually simpler than the somewhat confusing DSA protocol or moon math elliptic curve cryptography (ECC). But while it may be easier to understand RSA intuitively, it lacks the misuse resistance of these other more complex systems.</p>
+<p><a href="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?ssl=1"><img data-attachment-id="98922" data-permalink="https://blog.trailofbits.com/2019/07/08/fuck-rsa/image14-3/" data-orig-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?fit=523%2C500&amp;ssl=1" data-orig-size="523,500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image14" data-image-description data-medium-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?fit=300%2C287&amp;ssl=1" data-large-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?fit=523%2C500&amp;ssl=1" loading="lazy" class="aligncenter wp-image-98922 size-full jetpack-lazy-image" style="border:1px solid #000000;" src="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?resize=523%2C500&#038;ssl=1" alt width="523" height="500" data-recalc-dims="1" data-lazy-src="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?resize=523%2C500&amp;is-pending-load=1#038;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img data-attachment-id="98922" data-permalink="https://blog.trailofbits.com/2019/07/08/fuck-rsa/image14-3/" data-orig-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?fit=523%2C500&amp;ssl=1" data-orig-size="523,500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image14" data-image-description="" data-medium-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?fit=300%2C287&amp;ssl=1" data-large-file="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?fit=523%2C500&amp;ssl=1" loading="lazy" class="aligncenter wp-image-98922 size-full" style="border:1px solid #000000;" src="https://i2.wp.com/blog.trailofbits.com/wp-content/uploads/2019/07/image14.jpg?resize=523%2C500&#038;ssl=1" alt="" width="523" height="500" data-recalc-dims="1" /></noscript></a></p>
+<p>First of all, a common misconception is that ECC is super dangerous because choosing a bad curve can totally sink you. While it is true that curve choice has a major impact on security, one benefit of using ECC is that parameter selection can be done publicly. Cryptographers make all the difficult parameter choices so that developers just need to generate random bytes of data to use as keys and nonces. Developers could theoretically build an ECC implementation with terrible parameters and fail to check for things like <a href="https://blog.trailofbits.com/2018/08/01/bluetooth-invalid-curve-points/">invalid curve points</a>, but they tend to not do this. A likely explanation is that the math behind ECC is so complicated that very few people feel confident enough to actually implement it. In other words, it intimidates people into using libraries built by cryptographers who know what they’re doing. RSA on the other hand is so simple that it can be (poorly) implemented in an hour.</p>
+<p>Second, any Diffie-Hellman based key agreement or signature scheme (including elliptic curve variants) does not require padding and therefore completely sidesteps padding oracle attacks. This is a major win considering RSA has had a very poor track record avoiding this class of vulnerabilities.</p>
+<p>Trail of Bits recommends using <a href="https://en.wikipedia.org/wiki/Curve25519">Curve25519</a> for key exchange and digital signatures. Encryption needs to be done using a protocol called <a href="https://en.wikipedia.org/wiki/Integrated_Encryption_Scheme">ECIES</a> which combines an elliptic curve key exchange with a symmetric encryption algorithm. Curve25519 was designed to entirely prevent some of the things that can go wrong with other curves, and is very performant. Even better, it is implemented in <a href="https://libsodium.gitbook.io/doc/">libsodium</a>, which has <a href="https://libsodium.gitbook.io/doc/public-key_cryptography/sealed_boxes">easy-to-read documentation</a> and is <a href="https://libsodium.gitbook.io/doc/libsodium_users">available for most languages</a>.</p>
+<h2>Seriously, stop using RSA</h2>
+<p>RSA was an important milestone in the development of secure communications, but the last two decades of cryptographic research have rendered it obsolete. Elliptic curve algorithms for both key exchange and digital signatures were standardized back in 2005 and have since been integrated into intuitive and misuse-resistant libraries like libsodium. The fact that RSA is still in widespread use today indicates both a failure on the part of cryptographers for not adequately articulating the risks inherent in RSA, and also on the part of developers for overestimating their ability to deploy it successfully.</p>
+<p>The security community needs to start thinking about this as a herd-immunity problem—while some of us might be able to navigate the extraordinarily dangerous process of setting up or implementing RSA, the exceptions signal to developers that it is in some way still advisable to use RSA. Despite the many caveats and warnings on StackExchange and Github READMEs, very few people believe that they are the ones who will mess up RSA, and so they proceed with reckless abandon. Ultimately, users will pay for this. This is why we all need to agree that it is flat out unacceptable to use RSA in 2019. No exceptions.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-98915" class="share-twitter sd-button share-icon" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-98915" class="share-linkedin sd-button share-icon" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/?share=telegram" target="_blank" title="Click to share on Telegram"><span>Telegram</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-98915" class="share-facebook sd-button share-icon" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-3681601-98915-5f6553a696a2b' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;post_id=98915&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-98915-5f6553a696a2b' data-name='like-post-frame-3681601-98915-5f6553a696a2b'><h3 class="sd-title">Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>			</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<p class="entry-byline">By Ben Perez</p>
+		<p class="cat-links">Posted in <a href="https://blog.trailofbits.com/category/cryptography/" rel="category tag">Cryptography</a>, <a href="https://blog.trailofbits.com/category/press-release/" rel="category tag">Press Release</a></p>
+			</footer>
+</article><!-- #post-98915 -->
+						<nav role="navigation" id="nav-below" class="site-navigation post-navigation">
+			<h1 class="assistive-text">Post navigation</h1>
+
+		
+			<div class="nav-previous"><a href="https://blog.trailofbits.com/2019/07/03/avoiding-smart-contract-gridlock-with-slither/" rel="prev"><span class="meta-nav">&larr;</span> Avoiding Smart Contract “Gridlock” with Slither</a></div>			<div class="nav-next"><a href="https://blog.trailofbits.com/2019/07/12/librabft/" rel="next">On LibraBFT’s use of broadcasts <span class="meta-nav">&rarr;</span></a></div>
+		
+		</nav><!-- #nav-below -->
+		
+					<div id="comments" class="comments-area">
+	
+	
+			<h2 class="comments-title">
+			18 thoughts on &ldquo;<span>Seriously, stop using RSA</span>&rdquo;		</h2>
+
+		
+		<ol class="commentlist">
+					<li class="post pingback">
+			<p>Pingback: <a href='https://hackernewsrobot.wordpress.com/2019/07/08/fuck-rsa/' rel='external nofollow ugc' class='url'>Fuck RSA &#8211; Hacker News Robot</a></p>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-70106">
+			<article id="comment-70106" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/8a846002523f0b5157d9a10d9434290e?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/8a846002523f0b5157d9a10d9434290e?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/8a846002523f0b5157d9a10d9434290e?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/8a846002523f0b5157d9a10d9434290e?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/8a846002523f0b5157d9a10d9434290e?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn"><a href='https://gravatar.com/paragonie' rel='external nofollow ugc' class='url'>Scott Arciszewski</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70106"><time pubdate datetime="2019-07-08T10:05:15-04:00">
+						July 8, 2019 at 10:05 am						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70106#respond' data-commentid="70106" data-postid="98915" data-belowelement="comment-70106" data-respondelement="respond" data-replyto="Reply to Scott Arciszewski" aria-label='Reply to Scott Arciszewski'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Developers who are told to &#8220;use libsodium&#8221; and nothing further might not know what to do with this advice. I wrote a quick reference that might be a lot more useful.</p>
+<p><a href="https://paragonie.com/blog/2017/06/libsodium-quick-reference-quick-comparison-similar-functions-and-which-one-use" rel="nofollow ugc">https://paragonie.com/blog/2017/06/libsodium-quick-reference-quick-comparison-similar-functions-and-which-one-use</a></p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70106-5f6553a699f07' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70106&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70106-5f6553a699f07' data-name='like-comment-frame-3681601-70106-5f6553a699f07'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-70120">
+			<article id="comment-70120" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/f47f3c8d40b8fd1bc513435d62a3037f?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/f47f3c8d40b8fd1bc513435d62a3037f?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/f47f3c8d40b8fd1bc513435d62a3037f?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/f47f3c8d40b8fd1bc513435d62a3037f?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/f47f3c8d40b8fd1bc513435d62a3037f?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn">William Woodruff</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70120"><time pubdate datetime="2019-07-08T12:14:09-04:00">
+						July 8, 2019 at 12:14 pm						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70120#respond' data-commentid="70120" data-postid="98915" data-belowelement="comment-70120" data-respondelement="respond" data-replyto="Reply to William Woodruff" aria-label='Reply to William Woodruff'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>To duplicate what I said in a tweet<a href="https://twitter.com/8x5clPW2/status/1148255196134412296" rel="nofollow">1</a>:</p>
+<p>A ton of people are missing a key point in this post, which is that parameter selection in RSA is fraught for weird and unintuitive reasons. You can&#8217;t just &#8220;do everything right&#8221; to make RSA safe!</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70120-5f6553a69a5a1' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70120&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70120-5f6553a69a5a1' data-name='like-comment-frame-3681601-70120-5f6553a69a5a1'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-70123">
+			<article id="comment-70123" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/c901b7b9f1ee5a1df8d0f95ea75d855d?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/c901b7b9f1ee5a1df8d0f95ea75d855d?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/c901b7b9f1ee5a1df8d0f95ea75d855d?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/c901b7b9f1ee5a1df8d0f95ea75d855d?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/c901b7b9f1ee5a1df8d0f95ea75d855d?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn">Steven Roussey</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70123"><time pubdate datetime="2019-07-08T12:25:02-04:00">
+						July 8, 2019 at 12:25 pm						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70123#respond' data-commentid="70123" data-postid="98915" data-belowelement="comment-70123" data-respondelement="respond" data-replyto="Reply to Steven Roussey" aria-label='Reply to Steven Roussey'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>I think the non-padded RSA issues led to the study of homomorphic encryption back in the 70s or 80s. FHE came much later, and the field has changed a lot recently. But it’s interesting how the flaws have opened research into new areas like this (and now with ECC these days).</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70123-5f6553a69aa77' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70123&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70123-5f6553a69aa77' data-name='like-comment-frame-3681601-70123-5f6553a69aa77'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-70158">
+			<article id="comment-70158" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/680394285d491eb1a63b02ce68c4964a?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/680394285d491eb1a63b02ce68c4964a?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/680394285d491eb1a63b02ce68c4964a?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/680394285d491eb1a63b02ce68c4964a?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/680394285d491eb1a63b02ce68c4964a?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn">BigPilot</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70158"><time pubdate datetime="2019-07-09T00:26:16-04:00">
+						July 9, 2019 at 12:26 am						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70158#respond' data-commentid="70158" data-postid="98915" data-belowelement="comment-70158" data-respondelement="respond" data-replyto="Reply to BigPilot" aria-label='Reply to BigPilot'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>But isn&#8217;t this the reason we use libraries such as WinCrypt, to do the hard part for us?</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70158-5f6553a69af0b' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70158&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70158-5f6553a69af0b' data-name='like-comment-frame-3681601-70158-5f6553a69af0b'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-70165">
+			<article id="comment-70165" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/2b26503a73497c1f38c618c8d89c2bf0?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/2b26503a73497c1f38c618c8d89c2bf0?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/2b26503a73497c1f38c618c8d89c2bf0?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/2b26503a73497c1f38c618c8d89c2bf0?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/2b26503a73497c1f38c618c8d89c2bf0?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn"><a href='http://philzimmermann.com' rel='external nofollow ugc' class='url'>Philip Zimmermann</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70165"><time pubdate datetime="2019-07-09T07:31:19-04:00">
+						July 9, 2019 at 7:31 am						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70165#respond' data-commentid="70165" data-postid="98915" data-belowelement="comment-70165" data-respondelement="respond" data-replyto="Reply to Philip Zimmermann" aria-label='Reply to Philip Zimmermann'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>I agree.  This is why I switched to El Gamal as the default algorithm for PGP version 5 in the late 1990s.</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70165-5f6553a69b423' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70165&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70165-5f6553a69b423' data-name='like-comment-frame-3681601-70165-5f6553a69b423'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-70166">
+			<article id="comment-70166" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/730674e407fdc528c6ea1e8512d50d7d?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/730674e407fdc528c6ea1e8512d50d7d?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/730674e407fdc528c6ea1e8512d50d7d?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/730674e407fdc528c6ea1e8512d50d7d?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/730674e407fdc528c6ea1e8512d50d7d?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn">eeeee</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70166"><time pubdate datetime="2019-07-09T09:19:26-04:00">
+						July 9, 2019 at 9:19 am						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70166#respond' data-commentid="70166" data-postid="98915" data-belowelement="comment-70166" data-respondelement="respond" data-replyto="Reply to eeeee" aria-label='Reply to eeeee'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Nice talk with some simple explanations of RSA attacks by Hanno (co-author of the ROBOT attack) at CCC:<br />
+<a href="https://media.ccc.de/v/35c3-9607-the_rocky_road_to_tls_1_3_and_better_internet_encryption" rel="nofollow ugc">https://media.ccc.de/v/35c3-9607-the_rocky_road_to_tls_1_3_and_better_internet_encryption</a></p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70166-5f6553a69b8e1' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70166&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70166-5f6553a69b8e1' data-name='like-comment-frame-3681601-70166-5f6553a69b8e1'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-70168">
+			<article id="comment-70168" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/c3024f749ed19346f6087b40bb166aac?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/c3024f749ed19346f6087b40bb166aac?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/c3024f749ed19346f6087b40bb166aac?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/c3024f749ed19346f6087b40bb166aac?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/c3024f749ed19346f6087b40bb166aac?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn">Stephan</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70168"><time pubdate datetime="2019-07-09T09:32:57-04:00">
+						July 9, 2019 at 9:32 am						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70168#respond' data-commentid="70168" data-postid="98915" data-belowelement="comment-70168" data-respondelement="respond" data-replyto="Reply to Stephan" aria-label='Reply to Stephan'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>There is another reason not to use RSA, even if you do not fail: Security does not grow porportionally with parameter size:<br />
+&#8211; 2048-bit RSA has 112 bits of security<br />
+&#8211; 4096-bit RSA has 140 bits of security<br />
+&#8211; for 256 bits of security, you would need to use 15k-bit keys<br />
+Those key sizes would be even slower than RSA already is.</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70168-5f6553a69bda5' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70168&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70168-5f6553a69bda5' data-name='like-comment-frame-3681601-70168-5f6553a69bda5'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="post pingback">
+			<p>Pingback: <a href='https://severinwinkler.at/index.php/2019/07/09/seriously-stop-using-rsa/' rel='external nofollow ugc' class='url'>Seriously, stop using RSA &#8211; Die Cyber Mühle</a></p>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-70171">
+			<article id="comment-70171" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/117b3c204258a9ca30379acdb1382c28?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/117b3c204258a9ca30379acdb1382c28?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/117b3c204258a9ca30379acdb1382c28?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/117b3c204258a9ca30379acdb1382c28?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/117b3c204258a9ca30379acdb1382c28?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn">lundril</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70171"><time pubdate datetime="2019-07-09T09:47:06-04:00">
+						July 9, 2019 at 9:47 am						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70171#respond' data-commentid="70171" data-postid="98915" data-belowelement="comment-70171" data-respondelement="respond" data-replyto="Reply to lundril" aria-label='Reply to lundril'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Sorry, I cannot really agree. The biggest advantage of c25519 is its speed, shorter keys and resistance against timing attacks (so yes: I am all for c25519, but NOT because RSA has a general problem).</p>
+<p>The other points made here apply to ANY cryto system. Example: Prime number selection. It has been known since around 20 years, that you should choose the prime numbers randomly. For example see:<br />
+<a href="https://people.csail.mit.edu/rivest/pubs/RS01.version-1999-11-22.pdf" rel="nofollow ugc">https://people.csail.mit.edu/rivest/pubs/RS01.version-1999-11-22.pdf</a><br />
+Using a not-really-random generation of secrets will always lead to weak encryption.<br />
+(What happens if you use c25519 and the secrets you generate are based on a weak random number generator ?  That&#8217;s very likely a bad idea&#8230;)<br />
+That having a GOOD random number generator is hard, applies to any crypto system.</p>
+<p>Padding: The basic ECDSA requires a UNIQUE &#8220;really&#8221; random number for signing, for each message.<br />
+Failing to do that, reveals your secret key.<br />
+See <a href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm" rel="nofollow ugc">https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm</a> (look for Sony in the article).<br />
+How is this better than requiring padding, for which suitable alogrithms have been known for more than 15 years.<br />
+Note: There is actually OAEP+, which is supposed to be better:<br />
+<a href="https://www.shoup.net/papers/oaep.pdf" rel="nofollow ugc">https://www.shoup.net/papers/oaep.pdf</a></p>
+<p>The beauty of Ed25519 (signing with c25519): It specifies EXACTLY how to get rid of the &#8220;random&#8221; number you need for regular ECDSA. To be more precise: Ed25519 specifies a customized pseudo random number generator to achieve the same.</p>
+<p>Using c25519 with &#8220;small&#8221; private multipliers might break. Again the beauty here is that the original paper already describes that you should set the highest bit of the private multiplier to 1.<br />
+Of course if some jokester implements his/her own c25519 implementation and fails to set the highest bit of the private multiplier to &#8220;1&#8221;, then you run into exactly the same kind of trouble as described in the section &#8220;Public Exponent&#8221; for too small public exponents.</p>
+<p>In general: People implementing crypto should know what they are doing&#8230; otherwise you run into trouble; this is true for any crypto system including Elliptic Curves (like c25519).</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70171-5f6553a69c4f7' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70171&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70171-5f6553a69c4f7' data-name='like-comment-frame-3681601-70171-5f6553a69c4f7'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="li-comment-70226">
+			<article id="comment-70226" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/093b1804420967e2bcaf0cd1b1c2d694?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/093b1804420967e2bcaf0cd1b1c2d694?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/093b1804420967e2bcaf0cd1b1c2d694?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/093b1804420967e2bcaf0cd1b1c2d694?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/093b1804420967e2bcaf0cd1b1c2d694?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn"><a href='http://www.proteancode.com/' rel='external nofollow ugc' class='url'>Rod Chapman</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70226"><time pubdate datetime="2019-07-10T14:07:22-04:00">
+						July 10, 2019 at 2:07 pm						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70226#respond' data-commentid="70226" data-postid="98915" data-belowelement="comment-70226" data-respondelement="respond" data-replyto="Reply to Rod Chapman" aria-label='Reply to Rod Chapman'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>I implemented RSA key generation for a customer a few years ago. On the advice of our regulator, we tried to rigorously follow the method in Annex B.3 of FIP186-4, and we had a true hardware RNG at our disposal. Is the FIPS procedure considered OK or broken?</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70226-5f6553a69ca1d' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70226&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70226-5f6553a69ca1d' data-name='like-comment-frame-3681601-70226-5f6553a69ca1d'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="li-comment-70229">
+			<article id="comment-70229" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/5a0e3d4bd4d61098d6cb8d5332edb7e1?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/5a0e3d4bd4d61098d6cb8d5332edb7e1?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/5a0e3d4bd4d61098d6cb8d5332edb7e1?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/5a0e3d4bd4d61098d6cb8d5332edb7e1?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/5a0e3d4bd4d61098d6cb8d5332edb7e1?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn">Ben Perez</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70229"><time pubdate datetime="2019-07-10T16:23:23-04:00">
+						July 10, 2019 at 4:23 pm						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70229#respond' data-commentid="70229" data-postid="98915" data-belowelement="comment-70229" data-respondelement="respond" data-replyto="Reply to Ben Perez" aria-label='Reply to Ben Perez'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>You should be okay using FIP186-4. Most of the attacks on prime generation occur when people cut corners and try to only generate primes of a specific form like in ROCA. As the post points out, though, a lot of other things can go wrong with RSA implementations so we still recommend not using it even if all components are based on a vetted standard.</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70229-5f6553a69cebf' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70229&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70229-5f6553a69cebf' data-name='like-comment-frame-3681601-70229-5f6553a69cebf'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-70264">
+			<article id="comment-70264" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://i0.wp.com/pbs.twimg.com/profile_images/378800000607931772/bcee07c26fc0eba5880a29a6661158f9_normal.jpeg?resize=60%2C60" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/c7b10eeb861dbb1a4489342601c04e91?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://i0.wp.com/pbs.twimg.com/profile_images/378800000607931772/bcee07c26fc0eba5880a29a6661158f9_normal.jpeg?resize=60%2C60&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://i0.wp.com/pbs.twimg.com/profile_images/378800000607931772/bcee07c26fc0eba5880a29a6661158f9_normal.jpeg?resize=60%2C60' srcset='https://secure.gravatar.com/avatar/c7b10eeb861dbb1a4489342601c04e91?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn"><a href='http://twitter.com/ImpressTheNet' rel='external nofollow ugc' class='url'>Doug Miller (@ImpressTheNet)</a></cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-70264"><time pubdate datetime="2019-07-12T11:16:41-04:00">
+						July 12, 2019 at 11:16 am						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=70264#respond' data-commentid="70264" data-postid="98915" data-belowelement="comment-70264" data-respondelement="respond" data-replyto="Reply to Doug Miller (@ImpressTheNet)" aria-label='Reply to Doug Miller (@ImpressTheNet)'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>Anyone who references Fyre Island like you did is OK in my book.</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-70264-5f6553a69d505' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=70264&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-70264-5f6553a69d505' data-name='like-comment-frame-3681601-70264-5f6553a69d505'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="post pingback">
+			<p>Pingback: <a href='https://randomoracle.wordpress.com/2019/07/14/ethereum-mixing-with-rsa-getting-by-without-zero-knowledge-proofs/' rel='external nofollow ugc' class='url'>Ethereum mixing with RSA: getting by without zero-knowledge proofs &#8211; Random Oracle</a></p>
+		</li><!-- #comment-## -->
+		<li class="post pingback">
+			<p>Pingback: <a href='http://blog.trailofbits.com/2019/09/11/crypto-2019-takeaways/' rel='external nofollow ugc' class='url'>Crypto 2019 Takeaways | Trail of Bits Blog</a></p>
+		</li><!-- #comment-## -->
+		<li class="post pingback">
+			<p>Pingback: <a href='http://blog.trailofbits.com/2020/01/23/themes-from-real-world-crypto-2020/' rel='external nofollow ugc' class='url'>Themes from Real World Crypto 2020 | Trail of Bits Blog</a></p>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="li-comment-91809">
+			<article id="comment-91809" class="comment">
+				<footer>
+					<div class="comment-author vcard">
+						<img alt src="https://secure.gravatar.com/avatar/70ce0b483976136af77070342cf8797e?s=60&#038;d=identicon&#038;r=g" class="avatar avatar-60 photo jetpack-lazy-image" height="60" width="60" loading="lazy" data-lazy-srcset="https://secure.gravatar.com/avatar/70ce0b483976136af77070342cf8797e?s=120&#038;d=identicon&#038;r=g 2x" data-lazy-src="https://secure.gravatar.com/avatar/70ce0b483976136af77070342cf8797e?s=60&amp;is-pending-load=1#038;d=identicon&#038;r=g" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://secure.gravatar.com/avatar/70ce0b483976136af77070342cf8797e?s=60&#038;d=identicon&#038;r=g' srcset='https://secure.gravatar.com/avatar/70ce0b483976136af77070342cf8797e?s=120&#038;d=identicon&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></noscript>						<cite class="comment-author-name fn">Bob</cite>
+					</div><!-- .comment-author .vcard -->
+					
+					<div class="comment-meta commentmetadata">
+						<a class="comment-link" href="https://blog.trailofbits.com/2019/07/08/fuck-rsa/#comment-91809"><time pubdate datetime="2020-02-28T00:15:29-05:00">
+						February 28, 2020 at 12:15 am						</time></a>
+						<a rel='nofollow' class='comment-reply-link' href='https://blog.trailofbits.com/2019/07/08/fuck-rsa/?replytocom=91809#respond' data-commentid="91809" data-postid="98915" data-belowelement="comment-91809" data-respondelement="respond" data-replyto="Reply to Bob" aria-label='Reply to Bob'>Reply</a>											</div><!-- .comment-meta .commentmetadata -->
+				</footer>
+
+				<div class="comment-content"><p>KEEP USING RSA!</p>
+<p>This article is misleading to make it appear that RSA is not secure, but only the only evidence presented is improper implementation.</p>
+<p>Properly implemented RSA has been proven secure and unbreakable by the NSA with case studies such as Snowden, Lavabit, dark markets, and ECC is much harder to properly implement than RSA.</p>
+<p>The NSA has been pushing ECC because their quantum chips can break it easily.  D-Wave, Google, Alibaba, and others already have quantum chips.  The disinformation agents claim that &#8220;quantum computers don&#8217;t exist&#8221; which is true because nobody uses a computer to break crypto, they use specialized custom chips.</p>
+<p>All ECC (X25519-P521) will be broken by private sector quantum chips before RSA-2048 due to the physical limitations of stabilizing qubits.</p>
+<p>The people making false claims against RSA are either being paid or they are useful idiots.</p>
+<div class='jetpack-comment-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-comment-wrapper-3681601-91809-5f6553a69dd81' data-src='https://widgets.wp.com/likes/#blog_id=3681601&amp;comment_id=91809&amp;origin=blog.trailofbits.com&amp;obj_id=3681601-91809-5f6553a69dd81' data-name='like-comment-frame-3681601-91809-5f6553a69dd81'>
+<div class='likes-widget-placeholder comment-likes-widget-placeholder comment-likes'><span class='loading'>Loading...</span></div>
+<div class='comment-likes-widget jetpack-likes-widget comment-likes'><span class='comment-like-feedback'></span><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+</div>
+</div>
+
+			</article><!-- #comment-## -->
+
+		</li><!-- #comment-## -->
+		<li class="post pingback">
+			<p>Pingback: <a href='http://soatok.blog/2020/04/26/a-furrys-guide-to-digital-signature-algorithms/' rel='external nofollow ugc' class='url'>A Furry&#8217;s Guide to Digital Signature Algorithms &#8211; Dhole Moments</a></p>
+		</li><!-- #comment-## -->
+		</ol>
+
+		
+	
+	
+	
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply					<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2019/07/08/fuck-rsa/#respond" style="display:none;">Cancel reply</a></small>
+				</h3>
+						<form id="commentform" class="comment-form">
+				<iframe title="Comment Form" src="https://jetpack.wordpress.com/jetpack-comment/?blogid=3681601&#038;postid=98915&#038;comment_registration=0&#038;require_name_email=1&#038;stc_enabled=1&#038;stb_enabled=1&#038;show_avatars=1&#038;avatar_default=identicon&#038;greeting=Leave+a+Reply&#038;greeting_reply=Leave+a+Reply+to+%25s&#038;color_scheme=light&#038;lang=en_US&#038;jetpack_version=8.9.1&#038;show_cookie_consent=10&#038;has_cookie_consent=0&#038;token_key=%3Bnormal%3B&#038;sig=c7b0b2f3ee0a6737864783e03de1d4aaf4338d50#parent=https%3A%2F%2Fblog.trailofbits.com%2F2019%2F07%2F08%2Ffuck-rsa%2F" style="width:100%; height: 430px; border:0;" name="jetpack_remote_comment" class="jetpack_remote_comment" id="jetpack_remote_comment" sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups"></iframe>
+									<!--[if !IE]><!-->
+					<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = false;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+					<!--<![endif]-->
+							</form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="" />
+
+		
+</div><!-- #comments .comments-area -->
+
+			
+			</div><!-- #content -->
+		</div><!-- #primary .site-content -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+						<aside id="search-4" class="widget widget_search">	<form method="get" id="searchform" action="https://blog.trailofbits.com/" role="search">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="search" class="field" name="s" id="s" placeholder="Search &hellip;" />
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
+	</form>
+</aside><aside id="text-112416548" class="widget widget_text"><h1 class="widget-title">About Us</h1>			<div class="textwidget"><p>Since 2012, Trail of Bits has helped secure some of the world’s most targeted organizations and products. We combine high-­end security research with a real­ world attacker mentality to reduce risk and fortify code.</p>
+<p>Read more at <a href="https://www.trailofbits.com">www.trailofbits.com</a></p>
+</div>
+		</aside><aside id="rss_links-4" class="widget widget_rss_links"><h1 class="widget-title">Subscribe via RSS</h1><p><a target="_self" href="https://blog.trailofbits.com/feed/" title="Subscribe to Posts"><img src="https://blog.trailofbits.com/wp-content/plugins/jetpack/images/rss/red-small.png" alt="RSS Feed" /></a>&nbsp;<a target="_self" href="https://blog.trailofbits.com/feed/" title="Subscribe to Posts">RSS - Posts</a></p>
+</aside>
+		<aside id="recent-posts-5" class="widget widget_recent_entries">
+		<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/08/28/graphtage/">Graphtage: A New Semantic Diffing Tool</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/08/17/using-echidna-to-test-a-smart-contract-library/">Using Echidna to test a smart contract library</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/08/12/sinter-new-user-mode-security-enforcement-for-macos/">Sinter: New user-mode security enforcement for macOS</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/08/05/accidentally-stepping-on-a-defi-lego/">Accidentally stepping on a DeFi lego</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/07/12/new-manticore-verifier-for-smart-contracts/">Contract verification made easier</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/06/17/advocating-for-change/">Advocating for change</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/06/12/upgradeable-contracts-made-safer-with-crytic/">Upgradeable contracts made safer with Crytic</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/06/11/ecdsa-handle-with-care/">ECDSA: Handle with Care</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/06/09/how-to-check-if-a-mutex-is-locked-in-go/">How to check if a mutex is locked in Go</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/06/05/breaking-the-solidity-compiler-with-a-fuzzer/">Breaking the Solidity Compiler with a Fuzzer</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/05/29/detecting-bad-openssl-usage/">Detecting Bad OpenSSL Usage</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/05/27/verifying-windows-binaries-without-windows/">Verifying Windows binaries, without Windows</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/05/22/emerging-talent-winternship-2020-highlights/">Emerging Talent: Winternship 2020 Highlights</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/05/21/reinventing-vulnerability-disclosure-using-zero-knowledge-proofs/">Reinventing Vulnerability Disclosure using Zero-knowledge Proofs</a>
+									</li>
+											<li>
+					<a href="https://blog.trailofbits.com/2020/05/15/bug-hunting-with-crytic/">Bug Hunting with Crytic</a>
+									</li>
+					</ul>
+
+		</aside><aside id="text-112416546" class="widget widget_text"><h1 class="widget-title">Yearly Archive</h1>			<div class="textwidget"><ul>
+<li><a href="https://blog.trailofbits.com/2020">2020</a></li>
+<li><a href="https://blog.trailofbits.com/2019">2019</a></li>
+<li><a href="https://blog.trailofbits.com/2018">2018</a></li>
+<li><a href="https://blog.trailofbits.com/2017">2017</a></li>
+<li><a href="https://blog.trailofbits.com/2016">2016</a></li>
+<li><a href="https://blog.trailofbits.com/2015">2015</a></li>
+<li><a href="https://blog.trailofbits.com/2014">2014</a></li>
+<li><a href="https://blog.trailofbits.com/2013">2013</a></li>
+<li><a href="https://blog.trailofbits.com/2012">2012</a></li>
+</ul></div>
+		</aside><aside id="categories-4" class="widget widget_categories"><h1 class="widget-title">Categories</h1>
+			<ul>
+					<li class="cat-item cat-item-291"><a href="https://blog.trailofbits.com/category/apple/">Apple</a> (13)
+</li>
+	<li class="cat-item cat-item-141319"><a href="https://blog.trailofbits.com/category/attacks/">Attacks</a> (7)
+</li>
+	<li class="cat-item cat-item-44620"><a href="https://blog.trailofbits.com/category/authentication/">Authentication</a> (5)
+</li>
+	<li class="cat-item cat-item-502354744"><a href="https://blog.trailofbits.com/category/binary-ninja/">Binary Ninja</a> (11)
+</li>
+	<li class="cat-item cat-item-64575263"><a href="https://blog.trailofbits.com/category/blockchain/">Blockchain</a> (41)
+</li>
+	<li class="cat-item cat-item-1364812"><a href="https://blog.trailofbits.com/category/capture-the-flag/">Capture the Flag</a> (10)
+</li>
+	<li class="cat-item cat-item-100030"><a href="https://blog.trailofbits.com/category/compilers/">Compilers</a> (20)
+</li>
+	<li class="cat-item cat-item-9204"><a href="https://blog.trailofbits.com/category/conferences/">Conferences</a> (27)
+</li>
+	<li class="cat-item cat-item-182564"><a href="https://blog.trailofbits.com/category/containers/">Containers</a> (2)
+</li>
+	<li class="cat-item cat-item-25818"><a href="https://blog.trailofbits.com/category/cryptography/">Cryptography</a> (28)
+</li>
+	<li class="cat-item cat-item-28634997"><a href="https://blog.trailofbits.com/category/crytic/">Crytic</a> (2)
+</li>
+	<li class="cat-item cat-item-199448218"><a href="https://blog.trailofbits.com/category/cyber-grand-challenge/">Cyber Grand Challenge</a> (7)
+</li>
+	<li class="cat-item cat-item-55871"><a href="https://blog.trailofbits.com/category/darpa/">DARPA</a> (19)
+</li>
+	<li class="cat-item cat-item-4181544"><a href="https://blog.trailofbits.com/category/dynamic-analysis/">Dynamic Analysis</a> (12)
+</li>
+	<li class="cat-item cat-item-1342"><a href="https://blog.trailofbits.com/category/education/">Education</a> (13)
+</li>
+	<li class="cat-item cat-item-551269408"><a href="https://blog.trailofbits.com/category/empire-hacking/">Empire Hacking</a> (7)
+</li>
+	<li class="cat-item cat-item-1360277"><a href="https://blog.trailofbits.com/category/engineering-practice/">Engineering Practice</a> (11)
+</li>
+	<li class="cat-item cat-item-924"><a href="https://blog.trailofbits.com/category/events/">Events</a> (5)
+</li>
+	<li class="cat-item cat-item-14563"><a href="https://blog.trailofbits.com/category/exploits/">Exploits</a> (23)
+</li>
+	<li class="cat-item cat-item-1643774"><a href="https://blog.trailofbits.com/category/fuzzing/">Fuzzing</a> (25)
+</li>
+	<li class="cat-item cat-item-2812"><a href="https://blog.trailofbits.com/category/go/">Go</a> (3)
+</li>
+	<li class="cat-item cat-item-320"><a href="https://blog.trailofbits.com/category/guides/">Guides</a> (8)
+</li>
+	<li class="cat-item cat-item-25357667"><a href="https://blog.trailofbits.com/category/internship-projects/">Internship Projects</a> (18)
+</li>
+	<li class="cat-item cat-item-96379492"><a href="https://blog.trailofbits.com/category/iverify/">iVerify</a> (4)
+</li>
+	<li class="cat-item cat-item-46713213"><a href="https://blog.trailofbits.com/category/kubernetes/">Kubernetes</a> (2)
+</li>
+	<li class="cat-item cat-item-610"><a href="https://blog.trailofbits.com/category/linux/">Linux</a> (1)
+</li>
+	<li class="cat-item cat-item-15593"><a href="https://blog.trailofbits.com/category/malware/">Malware</a> (7)
+</li>
+	<li class="cat-item cat-item-1056516"><a href="https://blog.trailofbits.com/category/manticore/">Manticore</a> (14)
+</li>
+	<li class="cat-item cat-item-245013018"><a href="https://blog.trailofbits.com/category/mcsema/">McSema</a> (11)
+</li>
+	<li class="cat-item cat-item-171"><a href="https://blog.trailofbits.com/category/meta/">Meta</a> (10)
+</li>
+	<li class="cat-item cat-item-6701995"><a href="https://blog.trailofbits.com/category/mitigations/">Mitigations</a> (9)
+</li>
+	<li class="cat-item cat-item-293462444"><a href="https://blog.trailofbits.com/category/osquery/">osquery</a> (20)
+</li>
+	<li class="cat-item cat-item-208532"><a href="https://blog.trailofbits.com/category/paper-review/">Paper Review</a> (11)
+</li>
+	<li class="cat-item cat-item-6672"><a href="https://blog.trailofbits.com/category/press-release/">Press Release</a> (22)
+</li>
+	<li class="cat-item cat-item-3279"><a href="https://blog.trailofbits.com/category/privacy/">Privacy</a> (7)
+</li>
+	<li class="cat-item cat-item-1589"><a href="https://blog.trailofbits.com/category/products/">Products</a> (5)
+</li>
+	<li class="cat-item cat-item-5030448"><a href="https://blog.trailofbits.com/category/program-analysis/">Program Analysis</a> (15)
+</li>
+	<li class="cat-item cat-item-113884"><a href="https://blog.trailofbits.com/category/research-practice/">Research Practice</a> (10)
+</li>
+	<li class="cat-item cat-item-299073"><a href="https://blog.trailofbits.com/category/reversing/">Reversing</a> (12)
+</li>
+	<li class="cat-item cat-item-185574"><a href="https://blog.trailofbits.com/category/rust/">Rust</a> (3)
+</li>
+	<li class="cat-item cat-item-685590219"><a href="https://blog.trailofbits.com/category/safedocs/">SafeDocs</a> (1)
+</li>
+	<li class="cat-item cat-item-685590218"><a href="https://blog.trailofbits.com/category/sinter/">Sinter</a> (1)
+</li>
+	<li class="cat-item cat-item-401665"><a href="https://blog.trailofbits.com/category/sponsorships/">Sponsorships</a> (12)
+</li>
+	<li class="cat-item cat-item-538062"><a href="https://blog.trailofbits.com/category/static-analysis/">Static Analysis</a> (20)
+</li>
+	<li class="cat-item cat-item-19674948"><a href="https://blog.trailofbits.com/category/symbolic-execution/">Symbolic Execution</a> (15)
+</li>
+	<li class="cat-item cat-item-943"><a href="https://blog.trailofbits.com/category/training/">Training</a> (1)
+</li>
+	<li class="cat-item cat-item-29911"><a href="https://blog.trailofbits.com/category/year-in-review/">Year in Review</a> (4)
+</li>
+			</ul>
+
+			</aside><aside id="twitter_timeline-3" class="widget widget_twitter_timeline"><a class="twitter-timeline" data-height="400" data-theme="light" data-border-color="#e8e8e8" data-tweet-limit="8" data-lang="EN" data-partner="jetpack" data-chrome="nofooter transparent" href="https://twitter.com/trailofbits" href="https://twitter.com/trailofbits">My Tweets</a></aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+						<a></a>
+			
+					</div><!-- .site-info -->
+	</footer><!-- .site-footer .site-footer -->
+</div><!-- #page .hfeed .site -->
+
+<!--  -->
+<script defer id='bilmur' data-provider='wordpress.com' data-service='atomic' src='https://s0.wp.com/wp-content/js/bilmur.min.js'></script>
+<!-- Your Google Analytics Plugin is missing the tracking ID -->
+	<div style="display:none">
+	<div class="grofile-hash-map-8a846002523f0b5157d9a10d9434290e">
+	</div>
+	<div class="grofile-hash-map-f47f3c8d40b8fd1bc513435d62a3037f">
+	</div>
+	<div class="grofile-hash-map-c901b7b9f1ee5a1df8d0f95ea75d855d">
+	</div>
+	<div class="grofile-hash-map-680394285d491eb1a63b02ce68c4964a">
+	</div>
+	<div class="grofile-hash-map-2b26503a73497c1f38c618c8d89c2bf0">
+	</div>
+	<div class="grofile-hash-map-730674e407fdc528c6ea1e8512d50d7d">
+	</div>
+	<div class="grofile-hash-map-c3024f749ed19346f6087b40bb166aac">
+	</div>
+	<div class="grofile-hash-map-117b3c204258a9ca30379acdb1382c28">
+	</div>
+	<div class="grofile-hash-map-093b1804420967e2bcaf0cd1b1c2d694">
+	</div>
+	<div class="grofile-hash-map-5a0e3d4bd4d61098d6cb8d5332edb7e1">
+	</div>
+	<div class="grofile-hash-map-0d969ddfa66d3c676d92139a9c754063">
+	</div>
+	<div class="grofile-hash-map-70ce0b483976136af77070342cf8797e">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/blog.trailofbits.com\/2019\/07\/08\/fuck-rsa\/":98915};
+	</script>
+					<div id="sharing_email" style="display: none;">
+		<form action="/2019/07/08/fuck-rsa/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="https://blog.trailofbits.com/wp-content/plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<link rel='stylesheet' id='all-css-55a4552e991323c7f1b94c1a4c6094ee' href='https://blog.trailofbits.com/wp-content/plugins/jetpack/modules/carousel/jetpack-carousel.css?m=1593527050' type='text/css' media='all' />
+<script type='text/javascript'  src='https://blog.trailofbits.com/wp-content/plugins/jetpack/_inc/build/photon/photon.min.js?m=1585675598'></script>
+<script src='https://secure.gravatar.com/js/gprofiles.js?ver=202038' id='grofiles-cards-js'></script>
+<script id='wpgroho-js-extra'>
+var WPGroHo = {"my_hash":""};
+</script>
+<script id='jetpack-carousel-js-extra'>
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/blog.trailofbits.com\/wp-admin\/admin-ajax.php","nonce":"3ed7c59790","display_exif":"0","display_comments":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/blog.trailofbits.com\/wp-login.php?redirect_to=https%3A%2F%2Fblog.trailofbits.com%2F2019%2F07%2F08%2Ffuck-rsa%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};
+</script>
+<script type='text/javascript'  src='https://blog.trailofbits.com/_static/??-eJyVkFFPxCAQhP+QlJicevdg/CmGg7XddhcQlmt6v941Wm3uwdhHmJmPYeZsfIoCUWym1mOsdgTJzk+WU2gE1c65L2lI3Vjv5l+3DMAqwgXKEtxix2orOyLDENu3F6OnFtSlok+sipgCmZaOMd7wbl9/1bA9N6RgZUYRKEaQgTDCP9IXiCEV65okdiLoV8WQuy4G2fVaqxb/WW1zta9YTlV0hKrJfcHxvels3dqpQMXrTgThpD9QToPBxUBQNvnt8HoEPkPYh/eupFaBfnZbL/7AuAkrg3xh3lJh9b3w8/3D6Xg8PT0eDh9Kj+t/'></script>
+<script id='sharing-js-js-extra'>
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+</script>
+<script src='https://blog.trailofbits.com/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=8.9.1' id='sharing-js-js'></script>
+<script id='sharing-js-js-after'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-telegram', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtelegram', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-pocket', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+</script>
+	<iframe src='https://widgets.wp.com/likes/master.html?ver=202038#ver=202038' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+	<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+	
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=3681601&postid=98915&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=identicon&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=8.9.1&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=c7b0b2f3ee0a6737864783e03de1d4aaf4338d50#parent=https%3A%2F%2Fblog.trailofbits.com%2F2019%2F07%2F08%2Ffuck-rsa%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=3681601&postid=98915&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=identicon&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=8.9.1&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=c7b0b2f3ee0a6737864783e03de1d4aaf4338d50#parent=https%3A%2F%2Fblog.trailofbits.com%2F2019%2F07%2F08%2Ffuck-rsa%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "https:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		<script type='text/javascript' src='https://stats.wp.com/e-202038.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.9.1',blog:'3681601',post:'98915',tz:'-4',srv:'blog.trailofbits.com'} ]);
+	_stq.push([ 'clickTrackerInit', '3681601', '98915' ]);
+</script>
+
+</body>
+</html>
+<!--
+	generated in 0.145 seconds
+	111284 bytes batcached for 300 seconds
+-->
