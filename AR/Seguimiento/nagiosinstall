@@ -1,0 +1,3 @@
+Primero instale nagios4
+Ahora instale nagios plugins nrpe
+Deberia haber instalado httpd pero no tuve exito

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fulfillmentToken fulfillmentType="buy" xmlns="http://ns.adobe.com/adept">
+<distributor>urn:uuid:00000000-0000-0000-0000-000000000001</distributor>
+<operatorURL>http://books.google.com/books/acs4/fulfillment</operatorURL>
+<expiration>2020-09-19T07:28:18-07:00</expiration>
+<transaction>ge:eb2597dc-d1f8-688a-d579-2ede66415c94:1600524798823942</transaction>
+<userId>08682138130959458675</userId>
+<resourceItemInfo>
+<resource>urn:uuid:eb2597dc-d1f8-688a-d579-2ede66415c94</resource>
+<resourceItem>1</resourceItem>
+<src>https://books.google.com/books/download/El_inmigrante_piamont%C3%A9s_I.pdf?acsid=urn:uuid:eb2597dc-d1f8-688a-d579-2ede66415c94&amp;output=acs4_book_bytes&amp;ar=66e9a9a9ecea77f8433a3f0e4c78595a</src>
+<downloadType>simple</downloadType>
+</resourceItemInfo>
+<hmac>Uul9wYIA42md8vjt0BVQSzH8mvE=</hmac>
+</fulfillmentToken>
