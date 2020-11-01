@@ -1,0 +1,101 @@
+{UTF-8}
+Infectada  = A FUNCTION OF( )
+	~	
+	~		|
+
+Recuperada  = A FUNCTION OF( )
+	~	
+	~		|
+
+Susceptible  = A FUNCTION OF( )
+	~	
+	~		|
+
+tasaContagio  = A FUNCTION OF( )
+	~	
+	~		|
+
+tasaCuracion  = A FUNCTION OF( )
+	~	
+	~		|
+
+tasaExposicion  = A FUNCTION OF( )
+	~	
+	~		|
+
+tasaMortalidad  = A FUNCTION OF( )
+	~	
+	~		|
+
+tasaVacunacion  = A FUNCTION OF( )
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 1000
+	~	Day
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Day
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Day [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Day [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Susceptible,255,232,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Infectada,590,220,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,Recuperada,892,218,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,tasaContagio,177,445,49,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,tasaCuracion,407,446,49,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,tasaExposicion,637,439,56,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,tasaMortalidad,861,430,54,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,tasaVacunacion,398,45,58,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+///---\\\
+:L<%^E!@
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+5:FINAL TIME
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:4
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:0
+25:0
+26:0
+75:
+43:

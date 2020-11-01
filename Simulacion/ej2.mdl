@@ -1,0 +1,97 @@
+{UTF-8}
+Agua= INTEG (
+	entradaAgua,
+		0)
+	~	cm3
+	~		|
+
+CapacidadVaso=
+	250
+	~	cm3
+	~		|
+
+entradaAgua = WITH LOOKUP (
+	Volumen Vacio,
+		([(0,0)-(250,50)],(0,0),(50,10),(100,30),(150,50),(200,50),(250,50) ))
+	~	cm3/Second
+	~		|
+
+Volumen Vacio=
+	CapacidadVaso-Agua
+	~	cm3
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Second
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Second
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Second [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Second [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Agua,605,277,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,253,283,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,4,6,1,4,0,0,22,0,0,0,-1--1--1,,1|(492,283)|
+1,5,6,2,100,0,0,22,0,0,0,-1--1--1,,1|(335,283)|
+11,6,0,414,283,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,7,entradaAgua,414,301,46,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,8,Volumen Vacio,487,171,55,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,9,CapacidadVaso,734,92,60,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,10,1,8,0,0,0,0,0,64,0,-1--1--1,,1|(545,223)|
+1,11,9,8,0,0,0,0,0,64,0,-1--1--1,,1|(617,129)|
+1,12,8,7,0,0,0,0,0,64,0,-1--1--1,,1|(453,229)|
+///---\\\
+:L<%^E!@
+1:Current.vdfx
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+4:Time
+5:entradaAgua
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:7
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:0
+25:100
+26:100
+75:
+43:
