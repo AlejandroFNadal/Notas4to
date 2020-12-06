@@ -1,0 +1,1 @@
+Ej 1.1 Complementarios = https://www.wolframalpha.com/input/?i=%28x+and+not%28z%29+and+y%29+or+%28%28%28x+and+not%28z%29+and+y%29+or+%28z+and+not%28x%29%29%29+and%28%28y+and%28z+or+x%29+%29+or+%28not%28y%29+and+z+%29+or+%28not%28y%29+and+x+and+not%28z%29%29%29%29
