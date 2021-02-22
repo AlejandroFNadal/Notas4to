@@ -1,0 +1,105 @@
+.TH XFRACTINT 1
+.SH NAME
+xfractint \- fractal generation program
+.SH SYNOPSIS
+.B xfractint [options] [; comments]
+.SH DESCRIPTION
+.I Xfractint
+draws a wide variety of fractals.  Xfractint is a port of the IBM PC
+program fractint.  Xfractint has online documentation which should be
+referenced for most operation information.  Note that the online
+documentation is from fractint, and does not always accurately describe
+xfractint.  A text version of the online documentation can be generated
+by running ``make doc''.
+.SH OPTIONS
+.TP
+-display \fIdisplay_name\fR
+Specifies the X11 display to use.
+.TP
+-onroot
+Indicates the resulting images should appear on the root window.  Note:
+rubberband zoom boxes don't work on the root window.
+.TP
+-private
+Indicates that xfractint should allocate as many colors as possible in
+a private colormap.  Normally xfractint will use 128 colors; this flag will
+let you use all 256, but may mess up the colors in other windows.
+.TP
+-slowdisplay
+Indicates that the machine has a slow display, so the scrolling window
+should be updated infrequently.  Use this flag if xfractint hangs on
+the title screen.
+.TP
+-fast
+Indicates that xfractint should use the faster drawing mode.  Instead of
+drawing each pixel immediately, xfractint will save up pixels and then
+refresh the screen every 5 seconds.  Depending on your X implementation,
+this may make drawing twice as fast.
+.TP
+-disk
+Use disk video.  That is, generate the picture in memory instead of to the
+screen.  The resulting picture can be saved as a gif file or printer file.
+.TP
+-fixcolors \fInum\fR
+Specifies the number of colors to use.  This number must be a power of two.
+Also, this number can't be greater than the number of colors available.
+.TP
+-geometry \fIWxH[{+-X}{+-Y}]\fR
+This sets the size and position of the image window.  The default is 640x480
+pixels.
+.TP
+-share
+Indicates that xfractint should share the current colormap.  That is,
+xfractint uses as many colors as possible, but doesn't modify the colormap.
+.TP
+-simple
+Uses simpler keyboard handling.  Use this flag if you wish to debug
+xfractint with gdb, or else you may get "(gdb)" repeated infinitely.
+.TP
+xxx=yyy
+Sets variable xxx to value yyy.  See the online documentation for more
+details on the possible variables.
+.TP
+@filename
+.br
+Loads parameters from the specified file.
+.TP
+@filename/groupname
+.br
+Reads a named group of parameters from the specified file.
+.SH BUGS
+There are many bugs and things that haven't been implemented.
+Many potential bugs are discussed in the README file.
+.PP
+Xfractint uses a bizarre (to Unix users) user interface which was
+directly copied from the IBM version.
+If you don't have the appropriate keys, use the following key mappings:
+.nf
+IBM             Unix
+F1 to F10       Shift-1 to Shift-0
+INSERT          I
+DELETE          D
+PAGE_UP         U
+PAGE_DOWN       N
+LEFT_ARROW      H
+RIGHT_ARROW     L
+UP_ARROW        K
+DOWN_ARROW      J
+HOME            O
+END             E
+CTL_PLUS        }
+CTL_MINUS       {
+.fi
+.SH COPYRIGHT
+Copyright 1991, 1992, 1993, 1994, 1995, 1996, 1997 by The Stone Soup Group
+.SH AUTHORS
+.nf
+The original Unix port was done by Ken Shirriff (shirriff@eng.sun.com).
+Xfractint was updated to Fractint 19.5 by Tim Wegner (twegner@phoenix.net)
+under Linux 2.0. Please report updates for other platforms to Tim Wegner.
+The primary authors of Fractint 19.5 are:
+Bert Tyler       [73477,433] (CompuServe) bert_tyler@compuserve.com (Internet)
+Timothy Wegner   [71320,675]              twegner@phoenix.net
+Jonathan Osuch   [73277,1432]             73277.1432@compuserve.com
+Wesley Loewer                             loewer@tenet.edu
+.fi

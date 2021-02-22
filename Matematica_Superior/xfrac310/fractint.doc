@@ -1,0 +1,14 @@
+
+ As of version 16, all Fractint documentation is available online.
+ Run Fractint and press F1 for the main help index.
+
+ If you want a full documentation file (nicely formatted with table
+ of contents and cross-references by page number), you can easily
+ create one.
+ For the MS-DOS version, type the following command at the DOS prompt:
+     fractint makedoc
+ The above command will overwrite the file you are now reading
+ (fractint.doc) with the full Fractint documentation.
+
+ For the Unix version, type:
+     make doc

@@ -1,0 +1,73 @@
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c hc.c -o hc.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C -DSRCDIR=\"/usr/local/bin/X11/fractint\" -c unix.c
+cc -o hc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C hc.o unix.o
+./hc /c
+HC - FRACTINT Help Compiler.
+
+Compiling: help.src
+Making hot-links.
+Paginating online help.
+Paginating document.
+Comparing: helpdefs.h
+Writing: fractint.hlp
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c 3d.c -o 3d.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c ant.c -o ant.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c bigflt.c -o bigflt.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c biginit.c -o biginit.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c bignum.c -o bignum.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c bignumc.c -o bignumc.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c calcfrac.c -o calcfrac.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c calcmand.c -o calcmand.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c calmanfp.c -o calmanfp.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c cmdfiles.c -o cmdfiles.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c decoder.c -o decoder.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c diskvidu.c -o diskvidu.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c editpal.c -o editpal.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c encoder.c -o encoder.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c f16.c -o f16.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c fpu087.c -o fpu087.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c fracsuba.c -o fracsuba.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c fracsubr.c -o fracsubr.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c fractalb.c -o fractalb.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c fractalp.c -o fractalp.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c fractals.c -o fractals.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C -DSRCDIR=\"/usr/local/bin/X11/fractint\" -c fractint.c
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c framain2.c -o framain2.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c frasetup.c -o frasetup.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c general.c -o general.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c gifview.c -o gifview.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c hcmplx.c -o hcmplx.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C -DSRCDIR=\"/usr/local/bin/X11/fractint\" -c help.c
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c intro.c -o intro.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c jb.c -o jb.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c jiim.c -o jiim.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c line3d.c -o line3d.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c loadfdos.c -o loadfdos.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c loadfile.c -o loadfile.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c loadmap.c -o loadmap.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c lorenz.c -o lorenz.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c lsys.c -o lsys.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c lsysf.c -o lsysf.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c miscfrac.c -o miscfrac.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c miscovl.c -o miscovl.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c miscres.c -o miscres.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c mpmath_c.c -o mpmath_c.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c parser.c -o parser.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c parserfp.c -o parserfp.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c plot3d.c -o plot3d.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c printer.c -o printer.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c prompts1.c -o prompts1.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c prompts2.c -o prompts2.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c realdos.c -o realdos.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c rotate.c -o rotate.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c slideshw.c -o slideshw.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c stereo.c -o stereo.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c targa.c -o targa.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c testpt.c -o testpt.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c tgaview.c -o tgaview.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c tplus.c -o tplus.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c tplus_a.c -o tplus_a.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c unixscr.c -o unixscr.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c video.c -o video.o
+cc -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C   -c zoom.c -o zoom.o
+cc -o xfractint -I. -DXFRACT    -g -DLINUX -DBIG_ANSI_C 3d.o ant.o bigflt.o  biginit.o bignum.o bignumc.o calcfrac.o calcmand.o calmanfp.o cmdfiles.o decoder.o diskvidu.o editpal.o encoder.o f16.o fpu087.o fracsuba.o fracsubr.o fractalb.o fractalp.o fractals.o fractint.o framain2.o frasetup.o general.o gifview.o hcmplx.o help.o intro.o jb.o jiim.o line3d.o loadfdos.o loadfile.o loadmap.o lorenz.o lsys.o lsysf.o miscfrac.o miscovl.o miscres.o mpmath_c.o parser.o parserfp.o plot3d.o printer.o prompts1.o prompts2.o realdos.o rotate.o slideshw.o stereo.o targa.o testpt.o tgaview.o tplus.o tplus_a.o unix.o unixscr.o video.o zoom.o   -L/usr/X11R6/lib -lX11 -lm -lncurses -ltermcap
